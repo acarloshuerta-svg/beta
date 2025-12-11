@@ -1,0 +1,1002 @@
+.banner {
+  width: 100%;
+  height: 230px;
+  background: #143ECC;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;        /* opcional */
+}
+
+.banner h1 {
+    position: relative;         /* queda encima de la imagen */
+    margin: 0;
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    line-height: 1.1px;         /* centra verticalmente rápido */
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+    margin-top: 40px;
+}
+h1{
+    position: relative;
+    top: -80px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 230px;           /* separación entre logo y texto */
+  padding-left: 40px;
+}
+.logo {
+  height: 250px;      /* ajusta tamaño del escudo */
+  width: 200;
+  position: relative;
+  top: -20px;
+}
+
+.menu{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;              /* estaba muy alto */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;           /* permite 2 filas si no alcanza */
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Fondo con imagen + oscurecimiento */
+.contacto-fondo {
+  position: relative;
+  padding: 80px 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.contacto-fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(img_index/header_2.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Centrado del contenido */
+.contenedor-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: 500px;
+}
+
+/* Reducir el ancho del formulario SIN afectar el diseño */
+.contenedor-form form {
+  max-width: 670px; /* Ajusta a tu gusto */
+  width: 100%;
+}
+
+
+/* Título CONTACTO */
+.contacto-fondo h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 52px;
+  color: white;
+  margin-left: 100px; /* mueve el título a la derecha */
+  margin-bottom: -160px; /* acerca el título al formulario */
+  position: relative;
+  z-index: 1;
+  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.6);
+  margin-left: 300px;
+}
+
+/* FORMULARIO */
+form {
+  width: 55%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 35px;
+  border-radius: 20px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 35px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+/* Fieldset */
+fieldset {
+  border: none;
+  margin-bottom: 1px;
+}
+
+/* Legend */
+legend {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Párrafos intro del formulario */
+form p {
+  text-align: center;
+  font-size: 14px;
+  margin: 3px 0 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Inputs y selects */
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 15px;
+  border: 2.2px solid #333;
+  font-weight: bold;  
+  font-family: "Montserrat", sans-serif;
+}
+
+.privacidad-label {
+  display: flex;
+  align-items: center; /* 🔥 corrige el alineado */
+  gap: 4px;            /* ajusta la distancia entre checkbox y texto */
+}
+
+
+.privacidad-contenedor input[type="checkbox"] {
+  margin: 0;   /* quita márgenes del navegador */
+}
+
+
+/* Botones */
+button {
+  width: 100%; /* botónes de ancho completo */
+  font-family: "Montserrat", sans-serif;
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 8px;
+  transition: transform 0.2s ease; /* ✔ animación suave */
+}
+
+/* Hover */
+button:hover {
+  transform: scale(1.05); /* ✔ se agranda */
+  filter: brightness(1.08);
+}
+
+/* Botón azul */
+button[type="reset"] {
+  background: #143ECC;
+  color: white;
+}
+
+/* Botón rojo */
+button[type="submit"] {
+  background: #D60000;
+  color: white;
+}
+
+/* Efecto hover */
+button:hover {
+  filter: brightness(1.08);
+}
+
+/* contenedor label dentro del input */
+.input-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 12px;
+  border: 2.2px solid #000;
+  border-radius: 15px;
+  font-size: 15px;
+  background: transparent;
+}
+
+/* label flotante */
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #555;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* cuando se escribe o se enfoca, sube */
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label,
+.input-box select:focus + label,
+.input-box select:not([value=""]) + label {
+  top: -8px;
+  font-size: 11px;
+  background: white;
+  padding: 0 4px;
+}
+
+/* texto de privacidad en una sola línea */
+.privacidad-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* contenedor para poner inputs en la misma fila */
+.fila {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+}
+
+/* el input pequeño (DNI, Código país, Nivel) */
+.input-peq {
+  flex: 0.4;  /* más pequeño */
+}
+
+/* el input grande (N° documento, Celular, Grado) */
+.input-grande {
+  flex: 0.55;     /* más grande */
+}
+
+/* para selects dentro de .input-box */
+.fila .input-box select,
+.fila .input-box input {
+  width: 100%;
+}
+
+.fila .input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-reducido {
+  max-width: 95%;   /* reduce el ancho */
+}
+
+
+
+
+
+
+
+
+
+
+/* Sección Contáctanos */
+.contact-info {
+  padding: 50px 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-info h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 60px;
+  width: 100%;
+}
+
+/* Cajas de contacto */
+.info.box {
+  flex: 1;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  padding-left: 40px; /* posición base para WhatsApp y Redes */
+}
+
+/* SOLO Teléfono más centrado */
+.info.box:nth-child(1) {
+  padding-left: 120px; /* 🔥 aumenta un poco para centrarlo */
+}
+
+/* Íconos principales grandes */
+.info.box i {
+  font-size: 45px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Títulos */
+.info.box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0 10px 0;
+}
+
+/* Texto y números */
+.info.box p,
+.info.box a {
+  font-size: 17px;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+}
+
+/* Redes sociales: texto al lado del icono */
+.info.box:nth-child(3) p a {
+  display: flex;
+  align-items: center;
+  gap: 6px;            /* 🔥 espacio entre icono y texto */
+  margin-bottom: 5px;
+}
+
+/* Asegura que los íconos de redes sean más pequeños para quedar horizontales */
+.info.box:nth-child(3) p a i {
+  font-size: 22px;
+}
+
+/* Línea divisoria entre columnas */
+.info.box:not(:last-child) {
+  border-right: 2px solid #c3c3c3;
+}
+
+/* HOVER para iconos y texto (solo donde haya enlaces con icono + texto) */
+.info.box p a {
+  transition: transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Al pasar el mouse, crece icono + texto */
+.info.box p a:hover {
+  transform: scale(1.15);
+}
+
+/* HOVER para los iconos grandes de cada columna (Teléfono / WhatsApp / Redes) */
+.info.box i {
+  transition: transform 0.25s ease;
+}
+
+.info.box i:hover {
+  transform: scale(1.10);
+}
+
+
+
+
+
+
+
+
+footer {
+  background-color: #143ECC;
+  color: white;
+  padding: 30px 20px 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contenedor principal: 4 columnas (logo, mapa de sitio, contacto, imagen del mapa) */
+.footer-content {
+  display: grid;
+  grid-template-columns: 150px 1fr 400px 80px; /* ajustar anchos según tu preferencia */
+  gap: 20px;
+  align-items: start;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ---------- columna 1: logo + redes ---------- */
+.footer-content > .footer-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+  gap: 5px;
+  padding-left: -10px;
+}
+
+.footer-content > .footer-section:nth-child(1) img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* redes justo debajo del logo (alineadas horizontalmente) */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 60%;
+  transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+
+.footer-social a:hover {
+  color: #143ECC;
+  background: #fbff00;
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- columna 2: mapa de sitio (3 listas) ---------- */
+.site-map {
+  padding-left: 20px; /* separación desde la izquierda del bloque */
+}
+
+.site-map h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* contenedor de listas en 3 columnas */
+.site-map .maps-columns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px 50px; /* separación vertical y horizontal entre columnas */
+  align-items: start;
+}
+
+/* estilo de cada lista */
+.site-map .maps-columns ul {
+  list-style: disc;
+  padding-left: 18px; /* espacio para el bullet */
+  margin: 0;
+}
+
+.site-map .maps-columns ul li {
+  margin-bottom: 20px;
+}
+
+.site-map .maps-columns ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .18s ease;
+}
+
+.site-map .maps-columns ul li a:hover {
+  color: #fbff00;
+  text-decoration: underline;
+}
+
+/* ---------- columna 3: CONTÁCTANOS ---------- */
+.footer-content > .footer-section:nth-child(3) {
+  padding-left: 60px;
+}
+
+.footer-content > .footer-section:nth-child(3) h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content > .footer-section:nth-child(3) p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* usa pequeños iconos inline si quieres (ya vienen con FontAwesome) */
+.footer-content > .footer-section:nth-child(3) i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ---------- columna 4: imagen del mapa ---------- */
+.footer-content > .footer-section:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* empuja la imagen al extremo derecho */
+  padding-right: 0;
+  margin-right: -45px;
+  width: 140px;
+}
+
+.footer-content > .footer-section:nth-child(4) img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-top: 30px;
+}
+
+/* ---------- footer-bottom (texto final) ---------- */
+.footer-bottom {
+  margin-top: -10px;
+  background-color: #143ECC; /* sutil franja */
+  text-align: center;
+  padding: 20px -5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ---------- Responsive: adapta columnas en móviles ---------- */
+@media (max-width: 1000px) {
+  .footer-content {
+    grid-template-columns: 180px 1fr; /* logo + (mapa+contacto+mapa) apilados en la segunda columna */
+  }
+
+  /* fusionamos columnas 2-4 en una sola columna interna */
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 2 / 3;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) {
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-content > .footer-section:nth-child(1),
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .banner-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h1{
+    position: static;
+    top: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .frase{
+    position: static;
+    transform: none;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-mask{
+    position: static;
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  /* Centra y apila correctamente */
+  .banner-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Evita que el título se monte */
+  h1, .banner h1 {
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* El menú baja y se centra */
+  .menu {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* La frase se ubica debajo sin tapar */
+  .frase {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Elimina altura fija del banner */
+  .banner {
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto !important;
+    padding: 15px 0 !important;
+    overflow: visible !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .logo{
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  h1, .banner h1{
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .menu{
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .menu a{
+    font-size: 15px !important;
+  }
+
+  .frase{
+    position: static !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 12px !important;
+  }
+}
+
+
+
+/* Micro–ajustes header móvil */
+@media (max-width: 768px){
+  .banner{ padding-bottom: 8px !important; }
+  .banner-content{ gap: 10px !important; }
+
+  .menu{
+    row-gap: 6px !important;     /* separa filas */
+    column-gap: 16px !important;  /* separa columnas */
+  }
+  .menu a{
+    font-size: 14px !important;   /* caben mejor */
+    line-height: 1.2 !important;
+    padding: 6px 8px !important;
+  }
+
+  .frase{
+    margin: 10px 0 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+/* Ajuste fino del logo para centrar visualmente */
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    left: -20px; /* mueve a la izquierda, prueba -8 o -12 según tu ojo */
+  }
+}
+
+
+
+
+
+
+
+/* ===============================
+   CONTACTO — Responsive
+   =============================== */
+
+/* 1) Laptop/Tablet grande (≤1200px) */
+@media (max-width: 1200px) {
+  .contenedor-form{
+    margin-left: 0;              /* quita el desplazamiento fijo */
+    justify-content: center;     /* centra el formulario */
+    padding: 0 24px;             /* respiro lateral */
+  }
+
+  .contacto-fondo h2{
+    font-size: 44px;
+    margin: 0 0 24px 0;          /* elimina márgenes raros */
+    text-align: left;
+  }
+
+  .contacto-fondo::before{
+    opacity: .45;                /* leve oscurecido del fondo */
+  }
+
+  /* ancho un poco mayor que 55% para respirar en pantallas medianas */
+  .contenedor-form form{
+    max-width: 740px;
+    width: 70%;
+  }
+}
+
+/* 2) Tablet (≤900px): una columna y todo centrado */
+@media (max-width: 900px) {
+  .contacto-fondo{ padding: 70px 0; }
+
+  .contacto-fondo h2{
+    font-size: 38px;
+    text-align: center;
+    margin: 0 0 18px 0;
+  }
+
+  .contenedor-form form{
+    width: 86%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Las filas pasan a columna */
+  .fila{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Los “pequeño” y “grande” ocupan 100% */
+  .input-peq,
+  .input-grande,
+  .input-reducido{
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Inputs y selects más cómodos al tacto */
+  .input-box input,
+  .input-box select{
+    padding: 12px 14px;
+    font-size:16px;
+  }
+
+  legend{ font-size: 19px; }
+  form p{ font-size: 14px; }
+}
+
+/* 3) Móvil (≤600px): compacto y legible */
+@media (max-width: 600px) {
+  .contacto-fondo{ padding: 64px 0; }
+
+  .contacto-fondo h2{
+    font-size: 32px;
+  }
+
+  .contenedor-form form{
+    width: 92%;
+    max-width: 520px;
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .input-box{ margin-bottom: 12px; }
+  .input-box label{ font-size: 13px; }
+  .privacidad-label{ gap: 6px; }
+  button{ font-size: 14px; padding: 12px 16px; }
+}
+
+/* 4) Teléfonos pequeños (≤400px) */
+@media (max-width: 400px) {
+  .contacto-fondo h2{ font-size: 28px; }
+  .input-box input,
+  .input-box select{ font-size: 15px; padding: 10px 12px; }
+  button{ font-size: 13px; }
+}
+
+
+
+
+
+/* ===============================
+   Responsive: sección Contáctanos
+   =============================== */
+@media (max-width: 900px){
+  .contact-info{ padding:32px 16px; }
+
+  .contact-info h2{
+    margin-left: 0;            /* quita el empuje lateral */
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .info-container{
+    flex-direction: column;    /* apila las 3 columnas */
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+  }
+
+  /* “Tarjetitas” verticales con icono a la izquierda */
+  .info.box{
+    display: grid;
+    grid-template-columns: 32px 1fr; /* icono + texto */
+    column-gap: 12px;
+    align-items: start;
+    padding: 14px 16px;
+    margin: 0;
+    text-align: left;
+    border-right: none;                 /* quita divisor vertical */
+    border-bottom: 1px solid #e6e6e6;   /* divisor suave entre items */
+  }
+  .info.box:last-child{ border-bottom: none; }
+
+  /* resetea el “centrado” del primero en desktop */
+  .info.box:nth-child(1),
+  .info.box:nth-child(2),
+  .info.box:nth-child(3){
+    padding-left: 16px;
+  }
+
+  /* tamaños en móvil */
+  .info.box i{ font-size: 28px; margin-bottom: 0; }
+  .info.box h3{ font-size: 18px; margin: 0 0 6px; }
+  .info.box p, .info.box a{ font-size: 16px; }
+
+  /* Redes sociales en lista vertical y con icono + texto alineados */
+  .info.box:nth-child(3) p{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+  }
+  .info.box:nth-child(3) p a{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px){
+  .contact-info h2{ font-size: 24px; }
+  .info.box{
+    grid-template-columns: 28px 1fr;
+    padding: 12px 14px;
+  }
+  .info.box i{ font-size: 24px; }
+}

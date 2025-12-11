@@ -1,0 +1,2155 @@
+.banner {
+  width: 100%;
+  height: 230px;
+  background: #143ECC;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;        /* opcional */
+}
+
+.banner h1 {
+    position: relative;         /* queda encima de la imagen */
+    margin: 0;
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    line-height: 1.1px;         /* centra verticalmente rápido */
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+    margin-top: 40px;
+}
+h1{
+    position: relative;
+    top: -80px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 230px;           /* separación entre logo y texto */
+  padding-left: 40px;
+}
+.logo {
+  height: 250px;      /* ajusta tamaño del escudo */
+  width: 200;
+  position: relative;
+  top: -20px;
+}
+
+.menu{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;              /* estaba muy alto */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;           /* permite 2 filas si no alcanza */
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.programas {
+  position: relative;
+  background: url("img_nosotros/ACERCA6.png") center/cover no-repeat;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* centra horizontal */
+  text-align: center;    /* centra texto */
+  padding: 40px 20px;
+  color: #fff;
+  isolation: isolate;    /* asegura capas por encima del ::before */
+}
+
+/* CAPA AZUL TRANSPARENTE */
+.programas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1E3A8ACC; /* o #1E3A8ACC */
+  z-index: 0;
+}
+
+/* IMPORTANTE: ANULAR ESTILOS GLOBALES DEL H2 */
+.programas h2 {
+  position: relative;
+  font-size: 55px;          
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center 
+  
+  
+}
+/* quita margen del navegador */
+body { margin: 0; }
+
+.bienvenida{
+  background: #fff;
+  padding: 40px 0;
+  flex: 0 0 auto;   
+  max-width: 700px;     /* espacio arriba/abajo */
+}
+
+/* CONTENEDOR DEL TEXTO, PEGADO A LA IZQUIERDA */
+.box-texto{
+  width: 650px;           /* columna fija como en la maqueta */
+  margin-left: 24px;      /* pegado a la izquierda con un pequeño respiro */
+  padding: 16px 18px;     /* relleno interno */
+  background: transparent;    /* gris claro tipo tarjeta */
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  text-align: left;       /* asegura alineación izquierda */
+}
+
+.box-texto h2{
+  color: #143ECC;
+  font-size: 40px;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.box-texto p{
+  font-size: 30px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+/* Responsive simple */
+@media (max-width: 768px){
+  .box-texto{
+    width: auto;          /* ocupa el ancho del móvil */
+    margin: 0 16px;       /* márgenes laterales iguales */
+  }
+  .box-texto h2{ font-size: 26px; }
+  .box-texto p{ font-size: 16px; }
+}
+.galeria {
+  display: grid;
+  grid-template-columns: 380px 360px 360px; /* 3 columnas */
+  grid-template-rows: 260px 200px 280px;          /* 2 filas */
+  gap: 16px;
+  justify-content: center;
+  padding: 40px;
+  background: #fff;
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+/* Estilo base de todas las tarjetas */
+.galeria div {
+  background: #fff;
+  border: 5px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- POSICIONES Y TAMAÑOS ESPECÍFICOS --- */
+
+/* Imagen grande de la izquierda */
+.tarjeta1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / span 4; /* ocupa dos filas */
+  height: 720px;
+}
+
+/* Las cuatro de la derecha */
+.tarjeta2 { grid-column: 2 / 3; grid-row: 1; }
+.tarjeta3 { grid-column: 3 / 4; grid-row: 1; }
+.tarjeta4 { grid-column: 3 / 4; grid-row: 2; }
+.tarjeta5 { grid-column: 2 / 4; grid-row: 3; }
+
+/* Altos uniformes para las pequeñas */
+
+.tarjeta2{
+  height: 420px;
+}
+.tarjeta3{
+  height: 200px;
+}
+.tarjeta4{
+  height: 200px;
+  margin-top: -60px;
+}
+.tarjeta5{
+  height: 280px;
+  margin-top: -50px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .galeria {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .tarjeta1,
+  .tarjeta2,
+  .tarjeta3,
+  .tarjeta4,
+  .tarjeta5 {
+    grid-column: 1;
+    grid-row: auto;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+.principios {
+  background: #001D7B;          /* Azul institucional */
+  color: #fff;                  /* Texto blanco */
+  text-align: center;           /* Centrar texto */
+  font-size: 30px;              /* Tamaño grande */
+  font-weight: bold;
+  padding: 10px 0;              /* Espaciado arriba y abajo */
+  letter-spacing: 1px;          /* Separación entre letras */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25); /* sombra suave */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mision {
+  position: relative;
+  width: 500px;     /* ancho del conjunto */
+
+}
+
+.fondo-azul {
+  width: 250px;        /* ancho del rectángulo azul */
+  height: 400px;       /* alto del rectángulo */
+  background: #143ECC; /* color azul institucional */
+  border-radius: 0;  /* esquinas redondeadas */
+}
+
+.mision img {
+  position: absolute;
+  top: 40px;        /* distancia desde arriba */
+  left: 80px;       /* desplazamiento a la derecha */
+  width: 450px;     /* tamaño de la imagen */
+  max-height: 250px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* sombra suave */
+  margin-top: 40px;
+}
+.tarjeta-mision {
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  background: #fff;           /* fondo blanco limpio */
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.tarjeta-mision h2 {
+  color: #143ECC;             /* azul institucional */
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tarjeta-mision .subrayado {
+  width: 115px;
+  height: 6px;                /* grosor de la línea */
+  background-color: #c0392b;  /* rojo oscuro elegante */
+  margin: 0 auto 20px auto;   /* centrada debajo del título */
+  border-radius: 3px;
+}
+
+.tarjeta-mision p {
+  font-size: 25px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;        /* texto alineado a ambos lados */
+}
+
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 60px;
+}
+
+
+
+
+
+
+
+
+.tarjeta-vision {
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  background: #fff;           /* fondo blanco limpio */
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.tarjeta-vision h2 {
+  color: #143ECC;             /* azul institucional */
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tarjeta-vision .subrayadoo {
+  width: 115px;
+  height: 6px;                /* grosor de la línea */
+  background-color: #c0392b;  /* rojo oscuro elegante */
+  margin: 0 auto 20px auto;   /* centrada debajo del título */
+  border-radius: 3px;
+}
+
+.tarjeta-vision p {
+  font-size: 25px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;        /* texto alineado a ambos lados */
+}
+
+
+
+.vision {
+  position: relative;
+  width: 500px;     /* ancho del conjunto */
+  margin: 0 auto;
+  transform: translateX(500px);
+}
+
+.fondo-azull {
+  width: 250px;        /* ancho del rectángulo azul */
+  height: 400px;       /* alto del rectángulo */
+  background: #143ECC; /* color azul institucional */
+  border-radius: 0;  /* esquinas redondeadas */
+}
+
+.vision img {
+  position: absolute;
+  top: 40px;        /* distancia desde arriba */
+  right: 320px;       /* desplazamiento a la derecha */
+  width: 500px;     /* tamaño de la imagen */
+  max-height: 250px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* sombra suave */
+  margin-top: 40px;
+}
+
+
+
+.contentt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 60px;
+}
+
+
+@media (max-width: 768px) {
+  .vision {
+    transform: translateX(0); /* vuelve al centro en celulares */
+  }
+}
+
+
+
+
+
+
+
+.objetivos {
+  position: relative;
+  width: 500px;     /* ancho del conjunto */
+
+}
+
+.fondo-azulll {
+  width: 250px;        /* ancho del rectángulo azul */
+  height: 400px;       /* alto del rectángulo */
+  background: #143ECC; /* color azul institucional */
+  border-radius: 0;  /* esquinas redondeadas */
+}
+
+.objetivos img {
+  position: absolute;
+  top: 40px;        /* distancia desde arriba */
+  left: 80px;       /* desplazamiento a la derecha */
+  width: 450px;     /* tamaño de la imagen */
+  max-height: 250px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* sombra suave */
+  margin-top: 40px;
+}
+.tarjeta-objetivos {
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  background: #fff;           /* fondo blanco limpio */
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.tarjeta-objetivos h2 {
+  color: #143ECC;             /* azul institucional */
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tarjeta-objetivos .subrayadooo {
+  width: 180PX;
+  height: 6px;                /* grosor de la línea */
+  background-color: #c0392b;  /* rojo oscuro elegante */
+  margin: 0 auto 20px auto;   /* centrada debajo del título */
+  border-radius: 3px;
+}
+
+.tarjeta-objetivos p {
+  font-size: 25px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;        /* texto alineado a ambos lados */
+}
+
+
+.contenttt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 60px;
+}
+
+
+
+
+
+
+
+
+/* === Flecha animada para misión, visión y objetivos === */
+.content,
+.contentt,
+.contenttt {
+  position: relative; /* referencia para centrar la flecha */
+}
+
+.flecha-flujo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #143ECC, #c0392b, #143ECC);
+  background-size: 300% 100%;
+  animation: deslizar 2.5s linear infinite;
+  border-radius: 3px;
+  overflow: visible;
+  opacity: 0.9;
+  z-index: 1;            /* que se vea encima o debajo según prefieras */
+  pointer-events: none;  /* evita que interfiera con clics o selección */
+}
+
+/* Punta por defecto (→ derecha) */
+.flecha-flujo::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background: transparent;
+  border-radius: 1px;
+  animation: punta 2.5s linear infinite;
+  width: 12px;
+  height: 12px;
+  border-top: 4px solid #c0392b;
+  border-right: 4px solid #c0392b;
+}
+
+/* Animación del flujo */
+@keyframes deslizar {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Movimiento leve de la punta */
+@keyframes punta {
+  0%,100% { transform: translateY(-50%) rotate(45deg); }
+  50% { transform: translateY(-50%) translateX(4px) rotate(45deg); }
+}
+
+/* Ajustes de altura por bloque */
+.content  .flecha-flujo { top: 52%; }   /* MISIÓN */
+.contentt .flecha-flujo { top: 49%; }   /* VISIÓN */
+.contenttt .flecha-flujo { top: 52%; }  /* OBJETIVOS */
+
+/* === CAMBIO DE DIRECCIÓN SOLO PARA VISIÓN (← izquierda) === */
+.contentt .flecha-flujo::after {
+  right: auto;
+  left: -14px;
+  transform: translateY(-50%) rotate(225deg);
+}
+
+/* También invertir el flujo del gradiente */
+.contentt .flecha-flujo {
+  background: linear-gradient(270deg, #143ECC, #c0392b, #143ECC);
+}
+
+/* Opcional: esconder en móvil */
+@media (max-width: 768px){
+  .flecha-flujo{ display: none; }
+}
+
+/* ——— Flecha de VISIÓN apuntando a la IZQUIERDA ——— */
+.contentt .flecha-flujo {
+  background: linear-gradient(270deg, #143ECC, #c0392b, #143ECC) !important;
+}
+
+.contentt .flecha-flujo::after {
+  right: auto;
+  left: -12px;
+  transform: translateY(-50%) rotate(225deg);
+  /* usar una animación distinta para no volver a 45deg */
+  animation: punta-izq 2.5s linear infinite !important;
+}
+
+/* animación específica para la punta que mira a la IZQUIERDA */
+@keyframes punta-izq {
+  0%, 100% { transform: translateY(-50%) rotate(225deg); }
+  50%      { transform: translateY(-50%) translateX(-4px) rotate(225deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nuestra-historia {
+  position: relative;
+  width: 100%;
+  background-color: #1457AF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0 50px 0; /* espacio arriba y abajo */
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.nuestra-historia .historia-fondo {
+  position: absolute;
+  inset: 0;
+  background-image: url("img_nosotros/ffondo.jpeg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.nuestra-historia h2 {
+  position: relative;
+  color: #fff;
+  font-size: 52px;
+  text-align: center;
+  z-index: 1;
+  font-weight: bold;
+  margin-bottom: 30px; /* separa el título de las tarjetas */
+}
+
+/* contenedor de tarjetas */
+
+.historia-contenido {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  gap: 25px;
+  width: 100%;
+  padding: 0 40px; /* margen lateral */
+  box-sizing: border-box;
+}
+
+/* estilo de cada tarjeta */
+.historia-contenido .tarjetaa {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 20px;
+  min-height: 250px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+/* texto dentro de las tarjetas */
+.historia-contenido .tarjetaa p {
+  margin: 0;
+  color: #000;
+  text-align: justify;
+  font-size: 30px;
+  line-height: 1.4;
+}
+.historia-contenido .tarjetaa:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+
+
+.nuestra-historia .historia-fondo {
+  position: absolute;
+  inset: 0;
+  background-image: url("img_nosotros/ffondo.jpeg");
+  background-repeat: repeat-x;
+  background-size: 1900px auto;
+  background-position: 0 0;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: scrollFondo 20s linear infinite; /* velocidad y bucle */
+  width: 100%;
+}
+
+/* animación que mueve el fondo hacia la derecha en bucle */
+@keyframes scrollFondo {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1900px 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CONTENEDOR de la sección (solo da espacio arriba/abajo) */
+.titulo-equipo{
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* centra el rectángulo */
+  margin: 24px 0 32px;       /* separaciones superior e inferior */
+}
+
+/* RECTÁNGULO con texto */
+.chip-titulo{
+  margin: 0;                 /* quita márgenes del H2 */
+  padding: 25px 80px;        /* alto y ancho del rectángulo */
+  background: #143ECC;       /* azul que usas */
+  color: #fff;
+  border: 2px solid #0f2f9c; /* borde visible */
+  border-radius: 18px;       /* redondeado */
+  font-size: 52px;           /* tamaño del texto */
+  font-weight: 700;
+  letter-spacing: .5px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12); /* ligera sombra */
+  text-align: center;
+}
+
+/* Opcional: ajuste en pantallas pequeñas */
+@media (max-width: 480px){
+  .chip-titulo{ 
+    font-size: 22px; 
+    padding: 12px 22px; 
+    border-radius: 16px;
+  }
+}
+
+
+
+/* contenedor general (ya lo tienes si usas el chip de título) */
+.equipo-directivo{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+  /* cuando hagamos varias tarjetas, cambiaremos a grid */
+}
+
+/* tarjeta individual */
+.miembro{
+  width: 420px;               /* ancho de la tarjeta */
+  text-align: center;
+  padding: 10px 8px 22px;
+  margin: 10px 0 30px;
+}
+
+/* cargo arriba (letras grises y mayúsculas) */
+.cargo{
+  margin: 0 0 10px;
+  font-size: 35px;
+  color: #4b4b4b;
+  font-weight: 700;
+}
+
+/* contenedor de la foto para centrarla */
+.foto-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* imagen circular */
+.foto-circular{
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;           /* recorta sin deformar */
+  border: 6px solid #e9ebef;   /* aro claro tipo maqueta */
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
+/* nombre */
+.nombre{
+  margin: 8px 0 6px;
+  font-size: 30px;
+  font-weight: 800;
+  color: #3c3c3c;
+}
+
+/* descripción */
+.descripcion{
+  margin: 0 auto;
+  max-width: 400px;
+  font-size: 25px;
+  line-height: 1.35;
+  color: #646464;
+}
+
+/* pequeño ajuste en móvil */
+@media (max-width:480px){
+  .miembro{ width: 100%; }
+  .foto-circular{ width: 190px; height: 190px; }
+}
+
+
+
+.fila-directivos  {
+  display: flex;
+  justify-content: center;   /* centra toda la fila */
+  gap: 180px;                 /* espacio entre los círculos */
+  flex-wrap: wrap;           /* se adaptan si la pantalla es pequeña */
+  margin-top: 40px;
+}
+
+
+.fila-secundaria {
+  display: flex;
+  justify-content: center;   /* centra los dos círculos */
+  gap: 180px;                /* espacio entre ambos */
+  flex-wrap: wrap;           /* se adaptan si la pantalla es pequeña */
+  margin-top: 60px;          /* separación con la fila anterior */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.titulo-equipos{
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* centra el rectángulo */
+  margin: 24px 0 32px;       /* separaciones superior e inferior */
+}
+
+/* RECTÁNGULO con texto */
+.chip-titulos{
+  margin: 0;                 /* quita márgenes del H2 */
+  padding: 25px 80px;        /* alto y ancho del rectángulo */
+  background: #143ECC;       /* azul que usas */
+  color: #fff;
+  border: 2px solid #0f2f9c; /* borde visible */
+  border-radius: 18px;       /* redondeado */
+  font-size: 52px;           /* tamaño del texto */
+  font-weight: 700;
+  letter-spacing: .5px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12); /* ligera sombra */
+  text-align: center;
+}
+
+/* Opcional: ajuste en pantallas pequeñas */
+@media (max-width: 480px){
+  .chip-titulos{ 
+    font-size: 22px; 
+    padding: 12px 22px; 
+    border-radius: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.equipo-docente {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.contenedor-docente {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.texto-docente {
+  flex: 1;
+  font-size: 25px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 600px;
+}
+
+.imagen-docente {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 180px;
+}
+
+.imagen-docente img {
+  width: 950px !important;   /* Fuerza el ancho */
+  height: 550px;              /* Mantiene proporción */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Contenedor del efecto */
+.card-docente {
+  position: relative;
+  width: 950px;
+  height: 550px;
+  perspective: 2000px; /* genera profundidad 3D */
+}
+
+/* Cara frontal (imagen) */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* oculta el lado opuesto */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.9s ease;
+  transform-origin: center center;
+  transform: rotateY(0deg) scale(0.98);
+}
+
+/* Imagen principal */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Parte trasera con texto */
+.card-back {
+  background: linear-gradient(135deg, #143ECC, #4158D0);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  transform: rotateY(180deg) scale(0.98);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+/* Efecto al pasar el mouse */
+.card-docente:hover .card-front {
+  transform: rotateY(180deg) scale(0.98);
+}
+.card-docente:hover .card-back {
+  transform: rotateY(360deg) scale(0.98);
+}
+
+
+.card-back h3 {
+  font-size: 50px;       /* aumenta el tamaño del título */
+  font-weight: bold;     /* resalta el texto */
+  margin-bottom: 15px;   /* espacio debajo del título */
+}
+
+
+
+
+
+/* el círculo es el contenedor */
+.foto-circular{
+  width: 360px; 
+  height: 360px; 
+  border-radius: 50%;
+  position: relative; 
+  overflow: hidden;
+  border: 8px solid #e9ebef; 
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+.foto-circular > img{
+  width:100%; 
+  height:100%; 
+  object-fit:cover; 
+  display:block;
+  z-index: 1;
+  position: relative;
+}
+
+/* capa de “escarcha/bokeh” encima de la foto */
+.foto-circular .bokeh{
+  position:absolute; 
+  inset:0; 
+  border-radius:50%;
+  pointer-events:none;
+
+  /* tu imagen de bokeh/escarcha */
+  background: url("img_nosotros/ACERCA7.png") center/200% 200% repeat;
+  /*        ^^^^^^^^^^^^^^^^^^^^^^^^^ Pon aquí la ruta de la imagen de la foto que mostraste */
+
+  opacity:.28;                 /* transparencia del efecto */
+  mix-blend-mode: screen;      /* brillo sutil sobre la foto (puedes quitarlo si no te gusta) */
+  animation: bokeh-pan 28s linear infinite;
+  will-change: background-position;
+  z-index: 0;
+}
+
+/* movimiento muy suave en diagonal para que no canse la vista */
+@keyframes bokeh-pan{
+  0%   { background-position: 0%   0%;   }
+  50%  { background-position: 100% 50%;  }
+  100% { background-position: 0%   100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #143ECC;
+  color: white;
+  padding: 30px 20px 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+.footer-section{
+  margin-left: 0px;
+}
+
+.footer-section img{
+  width: 200px;
+  height: auto;
+}
+
+/* Contenedor principal: 4 columnas (logo, mapa de sitio, contacto, imagen del mapa) */
+.footer-content {
+  display: grid;
+  grid-template-columns: 150px 1fr 400px 80px; /* ajustar anchos según tu preferencia */
+  gap: 20px;
+  align-items: start;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ---------- columna 1: logo + redes ---------- */
+.footer-content > .footer-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+  gap: 5px;
+  padding-left: -10px;
+}
+
+.footer-content > .footer-section:nth-child(1) img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* redes justo debajo del logo (alineadas horizontalmente) */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 60%;
+  transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+
+.footer-social a:hover {
+  color: #143ECC;
+  background: #fbff00;
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- columna 2: mapa de sitio (3 listas) ---------- */
+.site-map {
+  padding-left: 20px; /* separación desde la izquierda del bloque */
+}
+
+.site-map h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* contenedor de listas en 3 columnas */
+.site-map .maps-columns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px 50px; /* separación vertical y horizontal entre columnas */
+  align-items: start;
+}
+
+/* estilo de cada lista */
+.site-map .maps-columns ul {
+  list-style: disc;
+  padding-left: 18px; /* espacio para el bullet */
+  margin: 0;
+}
+
+.site-map .maps-columns ul li {
+  margin-bottom: 20px;
+}
+
+.site-map .maps-columns ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .18s ease;
+}
+
+.site-map .maps-columns ul li a:hover {
+  color: #fbff00;
+}
+
+/* ---------- columna 3: CONTÁCTANOS ---------- */
+.footer-content > .footer-section:nth-child(3) {
+  padding-left: 60px;
+}
+
+.footer-content > .footer-section:nth-child(3) h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content > .footer-section:nth-child(3) p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* usa pequeños iconos inline si quieres (ya vienen con FontAwesome) */
+.footer-content > .footer-section:nth-child(3) i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ---------- columna 4: imagen del mapa ---------- */
+.footer-content > .footer-section:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* empuja la imagen al extremo derecho */
+  padding-right: 0;
+  margin-right: -45px;
+}
+
+.footer-content > .footer-section:nth-child(4) img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-top: 30px;
+}
+
+/* ---------- footer-bottom (texto final) ---------- */
+.footer-bottom {
+  margin-top: -10px;
+  background-color: #143ECC; /* sutil franja */
+  text-align: center;
+  padding: 20px -5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .banner-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h1{
+    position: static;
+    top: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .frase{
+    position: static;
+    transform: none;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-mask{
+    position: static;
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  /* Centra y apila correctamente */
+  .banner-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Evita que el título se monte */
+  h1, .banner h1 {
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* El menú baja y se centra */
+  .menu {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* La frase se ubica debajo sin tapar */
+  .frase {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Elimina altura fija del banner */
+  .banner {
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto !important;
+    padding: 15px 0 !important;
+    overflow: visible !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .logo{
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  h1, .banner h1{
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .menu{
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .menu a{
+    font-size: 15px !important;
+  }
+
+  .frase{
+    position: static !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 12px !important;
+  }
+}
+
+
+
+/* Micro–ajustes header móvil */
+@media (max-width: 768px){
+  .banner{ padding-bottom: 8px !important; }
+  .banner-content{ gap: 10px !important; }
+
+  .menu{
+    row-gap: 6px !important;     /* separa filas */
+    column-gap: 16px !important;  /* separa columnas */
+  }
+  .menu a{
+    font-size: 14px !important;   /* caben mejor */
+    line-height: 1.2 !important;
+    padding: 6px 8px !important;
+  }
+
+  .frase{
+    margin: 10px 0 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+/* Ajuste fino del logo para centrar visualmente */
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    left: -20px; /* mueve a la izquierda, prueba -8 o -12 según tu ojo */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Nosotros – Responsive
+   ========================= */
+
+/* --- Ajustes suaves de layout base --- */
+.bienvenida .box-texto {
+  max-width: 680px;
+}
+.bienvenida .box-texto h2 { line-height: 1.2; }
+
+/* ====== Tablet grande (≤ 1200px): 2 columnas fluidas ====== */
+@media (max-width: 1200px) {
+  .contenedor{
+    gap: 28px;
+    padding: 32px 20px;
+  }
+
+  .galeria{
+    grid-template-columns: 1fr 1fr;   /* 2 columnas */
+    grid-auto-rows: 200px;            /* altura base de fila */
+    gap: 14px;
+    padding: 24px 10px;
+    justify-content: center;
+  }
+
+  /* Resetea alturas/márgenes fijos para que el grid sea fluido */
+  .tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4, .tarjeta5{
+    height: auto;
+    margin-top: 0;
+  }
+
+  /* Nueva disposición: grande a la izquierda (3 filas) */
+  .tarjeta1 { grid-column: 1 / 2; grid-row: 1 / span 3; }
+  .tarjeta2 { grid-column: 2 / 3; grid-row: 1; }
+  .tarjeta3 { grid-column: 2 / 3; grid-row: 2; }
+  .tarjeta4 { grid-column: 2 / 3; grid-row: 3; }
+  .tarjeta5 { grid-column: 1 / 3; grid-row: 4; } /* ancho completo abajo */
+}
+
+/* ====== Tablet/Móvil (≤ 992px): texto arriba, galería abajo ====== */
+@media (max-width: 992px) {
+  .contenedor{
+    flex-direction: column;       /* apila texto + galería */
+    align-items: center;
+    gap: 24px;
+  }
+
+  .bienvenida{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .bienvenida .box-texto{
+    width: min(92%, 720px);
+    text-align: left;
+  }
+
+  .bienvenida .box-texto h2{
+    font-size: clamp(24px, 4vw, 30px);
+  }
+  .bienvenida .box-texto p{
+    font-size: clamp(15px, 2.2vw, 17px);
+    line-height: 1.6;
+  }
+
+  .galeria{
+    width: 100%;
+    grid-template-columns: min(680px, 92%); /* 1 columna centrada */
+    grid-auto-rows: auto;
+    padding: 0 0 10px;
+  }
+
+  .galeria > div{
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+}
+
+/* ====== Teléfonos (≤ 560px): tarjetas full, tipografía compacta ====== */
+@media (max-width: 560px) {
+  .galeria{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .bienvenida .box-texto{
+    width: 92%;
+  }
+  .bienvenida .box-texto p{
+    font-size: 15px;
+  }
+}
+
+/* ====== Teléfonos muy pequeños (≤ 380px) ====== */
+@media (max-width: 380px) {
+  .galeria{
+    gap: 10px;
+  }
+  .bienvenida .box-texto h2{
+    font-size: 22px;
+  }
+  .bienvenida .box-texto p{
+    font-size: 14.5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Responsive sección Nosotros
+   =============================== */
+@media (max-width: 768px) {
+  /* Mantén la estructura centrada */
+  .nosotros-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    gap: 25px;
+  }
+
+  /* Control del bloque de imágenes */
+  .galeria-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dos imágenes por fila */
+    gap: 10px;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .galeria-nosotros img {
+    width: 100%;
+    height: 160px;                /* altura equilibrada */
+    object-fit: cover;            /* recorta sin deformar */
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+  .galeria-nosotros {
+    grid-template-columns: 1fr;   /* una por fila */
+    gap: 12px;
+  }
+
+  .galeria-nosotros img {
+    height: 180px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== NOSOTROS: galería compacta solo en responsive ====== */
+@media (max-width: 900px) {
+  /* 1 columna, centrada y con separación más corta */
+  .galeria{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+    padding: 20px 0;
+    justify-content: center;
+  }
+
+  /* anula alturas/márgenes especiales de escritorio */
+  .tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4, .tarjeta5{
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 92%;
+    max-width: 520px;
+    height: auto !important;     /* <- quita 720px, 420px, 280px, etc. */
+    margin: 0 auto !important;   /* <- quita márgenes negativos */
+    overflow: hidden;            /* recorte limpio del cover */
+    border-radius: 8px;
+  }
+
+  /* tamaño REAL de cada imagen (alto controlado) */
+  .galeria > div img{
+    width: 100% !important;
+    height: 200px !important;    /* ← aquí se reduce de verdad */
+    object-fit: cover;           /* recorta sin deformar */
+    display: block;
+  }
+}
+
+/* teléfonos pequeños: aún más compacto */
+@media (max-width: 480px) {
+  .tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4, .tarjeta5{
+    max-width: 440px;
+  }
+  .galeria > div img{
+    height: 160px !important;
+  }
+}
+
+
+/* ===== Ajuste final: centrado y tamaño moderado ===== */
+@media (max-width: 900px) {
+  .galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centra todo el bloque */
+    justify-content: center;
+    gap: 14px;
+    padding: 0 0 25px;
+    transform: scale(0.95);        /* reduce un poco el tamaño */
+    transform-origin: top center;  /* mantiene el centrado */
+  }
+
+  .galeria > div {
+    width: 90%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .galeria img {
+    width: 100%;
+    height: 180px !important;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+}
+
+/* teléfonos pequeños */
+@media (max-width: 480px) {
+  .galeria {
+    transform: scale(0.9);
+  }
+
+  .galeria > div {
+    max-width: 400px;
+  }
+
+  .galeria img {
+    height: 150px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================
+   Responsive Misión / Visión / Objetivos
+   ============================ */
+
+/* Tablet y móvil (≤ 900px): apilar, centrar y acotar anchos */
+@media (max-width: 900px) {
+  /* Cada fila (mision, vision, objetivos) */
+  .content,
+  .contentt,
+  .contenttt {
+    display: flex;
+    flex-direction: column;      /* apila */
+    align-items: center;         /* centra todo */
+    justify-content: center;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  /* Anchos controlados de los bloques (imagen+rectángulo azul) */
+  .mision, .vision, .objetivos {
+    width: min(520px, 100%);
+    margin: 0 auto;
+  }
+
+  /* Tarjetas de texto blancas */
+  .tarjeta-mision,
+  .tarjeta-vision,
+  .tarjeta-objetivos {
+    width: min(520px, 100%);
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 24px 18px;
+    border-radius: 8px;
+  }
+
+  /* Tipografías un poco más pequeñas para móvil */
+  .tarjeta-mision h2,
+  .tarjeta-vision h2,
+  .tarjeta-objetivos h2 { font-size: 24px; }
+
+  .tarjeta-mision p,
+  .tarjeta-vision p,
+  .tarjeta-objetivos p { font-size: 18px; line-height: 1.6; }
+
+  /* Flecha animada: ocultar en responsive para evitar solapes */
+  .flecha-flujo { display: none !important; }
+
+  /* ----- Imagen + rectángulo azul: hacerlos compactos y centrados ----- */
+
+  /* Reducir el rectángulo azul y centrarlo */
+  .fondo-azul,
+  .fondo-azull,
+  .fondo-azulll {
+    width: 140px;
+    height: 160px;
+    margin: 0 auto;             /* centrado */
+    border-radius: 0;
+  }
+
+  /* Quitar posicionamientos absolutos en móvil y hacer la imagen responsive */
+  .mision img,
+  .vision img,
+  .objetivos img {
+    position: static !important; /* anula top/left/right absolutos */
+    display: block;
+    width: 88%;
+    max-width: 420px;
+    height: auto;
+    margin: -40px auto 0;       /* superpone levemente sobre el rectángulo */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+  }
+
+  /* Orden visual para mantener alternancia agradable */
+  /* Misión: imagen arriba, texto abajo */
+  .content .mision { order: 1; }
+  .content .tarjeta-mision { order: 2; }
+
+  /* Visión: texto arriba, imagen abajo (como en escritorio, pero apilado) */
+  .contentt .tarjeta-vision { order: 1; }
+  .contentt .vision { order: 2; }
+
+  /* Objetivos: imagen arriba, texto abajo */
+  .contenttt .objetivos { order: 1; }
+  .contenttt .tarjeta-objetivos { order: 2; }
+}
+
+/* Teléfonos pequeños (≤ 600px): aún más compacto */
+@media (max-width: 600px) {
+  .tarjeta-mision,
+  .tarjeta-vision,
+  .tarjeta-objetivos {
+    width: 92%;
+    padding: 20px 16px;
+  }
+
+  .fondo-azul,
+  .fondo-azull,
+  .fondo-azulll {
+    width: 120px;
+    height: 140px;
+  }
+
+  .mision img,
+  .vision img,
+  .objetivos img {
+    width: 86%;
+    margin-top: -32px;
+  }
+
+  .tarjeta-mision h2,
+  .tarjeta-vision h2,
+  .tarjeta-objetivos h2 { font-size: 22px; }
+
+  .tarjeta-mision p,
+  .tarjeta-vision p,
+  .tarjeta-objetivos p { font-size: 17px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   Responsive — Nuestra Historia (grid 4→2→1)
+   ========================================= */
+
+/* Tablet grande (≤ 1024px): 2 columnas */
+@media (max-width: 1024px) {
+  .nuestra-historia h2{
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+
+  .historia-contenido{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: min(1100px, 96%);     /* centra y limita ancho */
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .historia-contenido .tarjeta{
+    min-height: 220px;
+    padding: 18px;
+  }
+
+  .historia-contenido .tarjeta p{
+    font-size: 22px;
+    line-height: 1.55;
+  }
+}
+
+/* Móvil (≤ 600px): 1 columna, centrado y texto cómodo */
+@media (max-width: 600px) {
+  .nuestra-historia{
+    padding: 22px 0 40px;
+  }
+
+  .nuestra-historia h2{
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .historia-contenido{
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .historia-contenido .tarjeta{
+    padding: 16px;
+    min-height: unset;           /* quita alturas forzadas */
+    border-radius: 8px;
+  }
+
+  .historia-contenido .tarjeta p{
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Desactiva “hover” en táctiles para evitar saltos */
+  .historia-contenido .tarjeta:hover{
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  }
+
+  /* Fondo animado: asegura cobertura y fluidez en móvil */
+  .nuestra-historia .historia-fondo{
+    background-size: 900px auto;   /* más ligero en móvil */
+    opacity: .22;
+    animation-duration: 25s;       /* movimiento más suave */
+  }
+}
+
+/* Teléfonos muy pequeños (≤ 380px): aún más compacto */
+@media (max-width: 380px){
+  .nuestra-historia h2{ font-size: 28px; }
+  .historia-contenido .tarjeta p{ font-size: 17px; }
+}
+/* Mantener mismo tamaño de letra que Misión, Visión y Objetivos */
+@media (max-width: 900px) {
+  .historia-contenido .tarjetaa p {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    text-align: justify;
+  }
+
+  .nuestra-historia h2 {
+    font-size: 38px !important; /* mismo tamaño de título */
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
+
+
+
+/* ======================================
+   Responsive — Equipo Docente
+   ====================================== */
+
+/* Tablet (≤ 1024px): reducir anchos y márgenes */
+@media (max-width: 1024px) {
+  .equipo-docente { padding: 40px 0 60px; }
+
+  .contenedor-docente{
+    width: 94%;
+    gap: 28px;
+  }
+
+  .texto-docente{
+    max-width: 560px;
+    font-size: 22px;
+  }
+
+  /* Reduce el bloque de imagen/carta */
+  .imagen-docente{ margin-left: 0; }
+  .card-docente{
+    width: 720px;
+    height: 420px;
+  }
+}
+
+/* Móvil (≤ 900px): apilar, centrar y usar proporción 16:9 */
+@media (max-width: 900px) {
+  .contenedor-docente{
+    flex-direction: column;       /* texto arriba, imagen abajo */
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .texto-docente{
+    width: 92%;
+    max-width: 680px;
+    font-size: 20px;
+    line-height: 1.65;
+    text-align: justify;
+  }
+
+  .imagen-docente{
+    width: 92%;
+    max-width: 680px;
+    margin-left: 0;               /* elimina empuje lateral */
+    justify-content: center;
+  }
+
+  /* Tarjeta con flip: hacerla fluida y mantener proporción */
+  .card-docente{
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    aspect-ratio: 16 / 9;         /* 16:9 parecido a 950x550 */
+    perspective: 1200px;
+  }
+
+  /* Caras ocupan todo el contenedor */
+  .card-front, .card-back{
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+  }
+  .card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* En táctil: desactivar hover (evita volteo accidental) */
+  .card-docente:hover .card-front,
+  .card-docente:hover .card-back{
+    transform: none;
+  }
+}
+
+/* Teléfonos (≤ 600px): aún más compacto */
+@media (max-width: 600px) {
+  .texto-docente{
+    width: 92%;
+    font-size: 18px;
+  }
+
+  .card-docente{
+    max-width: 520px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Teléfonos pequeños (≤ 380px) */
+@media (max-width: 380px) {
+  .texto-docente{ font-size: 17px; }
+  .card-docente{ max-width: 460px; }
+}
+
+/* Forzar que la imagen respete el contenedor en responsive
+   (anula el width:950px !important del escritorio) */
+@media (max-width: 1024px) {
+  .imagen-docente img{
+    width: 100% !important;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================
+   Responsive — Equipo Directivo
+   ================================ */
+
+/* Laptop / tablet grande (≤ 1200px): reduce tamaños y espacios */
+@media (max-width: 1200px) {
+  .fila-directivos,
+  .fila-secundaria {
+    gap: 80px;
+  }
+  .miembro { width: 380px; }
+  .foto-circular { width: 300px; height: 300px; }
+  .cargo { font-size: 32px; }
+  .nombre { font-size: 28px; }
+  .descripcion { font-size: 22px; }
+}
+
+/* Tablet (≤ 900px): 2 columnas y centrado */
+@media (max-width: 900px) {
+  /* Cambia filas a grid para que se adapten */
+  .fila-directivos,
+  .fila-secundaria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    justify-items: center;      /* centra cada tarjeta */
+    align-items: start;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .miembro {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 8px 14px;
+  }
+
+  .foto-circular {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .cargo   { font-size: 26px; }
+  .nombre  { font-size: 24px; }
+  .descripcion {
+    max-width: 420px;
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 0 auto;
+  }
+}
+
+/* Móvil (≤ 600px): 1 columna, todo centrado y legible */
+@media (max-width: 600px) {
+  .fila-directivos,
+  .fila-secundaria {
+    grid-template-columns: 1fr; /* una tarjeta por fila */
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .miembro { max-width: 420px; }
+
+  .foto-circular { width: 190px; height: 190px; }
+
+  .cargo   { font-size: 22px; }
+  .nombre  { font-size: 22px; }
+  .descripcion { font-size: 18px; line-height: 1.6; }
+}
+
+/* Teléfonos pequeños (≤ 380px): ultra compacto */
+@media (max-width: 380px) {
+  .foto-circular { width: 170px; height: 170px; }
+  .cargo, .nombre { font-size: 20px; }
+  .descripcion { font-size: 17px; }
+}
+
+
+
+
+
+/* ---------- Responsive: adapta columnas en móviles ---------- */
+@media (max-width: 1000px) {
+  .footer-content {
+    grid-template-columns: 180px 1fr; /* logo + (mapa+contacto+mapa) apilados en la segunda columna */
+  }
+
+  /* fusionamos columnas 2-4 en una sola columna interna */
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 2 / 3;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) {
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-content > .footer-section:nth-child(1),
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) img {
+    width: 100%;
+    max-width: 320px;
+  }
+}

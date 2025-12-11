@@ -1,0 +1,1358 @@
+.banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  height: 480px;
+  background: #143ECC;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;        /* opcional */
+  }
+
+.banner .img-layer {
+    position: absolute;
+    inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+    background-image: url("img_index/header2.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;              /* TRANSPARENCIA: 0.10–0.40 suele verse bien */
+    pointer-events: none;       /* evita clics sobre la capa */
+  }
+
+.banner h1 {
+    position: relative;         /* queda encima de la imagen */
+    margin: 0;
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    line-height: 1.1px;         /* centra verticalmente rápido */
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+  }
+h1{
+    position: relative;
+    top: -170px;
+  }
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 230px;           /* separación entre logo y texto */
+  padding-left: 40px;
+}
+.logo {
+  height: 250px;      /* ajusta tamaño del escudo */
+  width: 200;
+  position: relative;
+  top: -120px;
+}
+
+.menu {
+  position: absolute;
+  bottom: 300px; /* SUBE O BAJA EL MENÚ */
+  left: 53%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 85px;
+  width: 100%;
+  z-index: 5;pointer-events: auto;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+.frase{
+  position: absolute;
+  bottom: 130px; /* ajusta esta distancia según necesites */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  font-style: italic;
+  z-index: 5;
+  pointer-events: none;
+  text-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+}
+
+.frase-animada {
+   opacity: 0;
+  /* mantenemos el centrado horizontal (-50%) y añadimos el slide vertical */
+  transform: translate(-50%, 20px);
+  animation: fraseIntro 1.2s ease-out .15s forwards;
+}
+
+@keyframes fraseIntro {
+  to{
+    opacity: 1;
+    transform: translate(-50%, 0); /* sigue centrada, solo sube */
+  }
+}
+
+
+html body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+
+/* Marco de la tarjeta */
+.slider-mask{
+  position:absolute;
+  bottom:-330px;
+  left:50%;
+  transform:translateX(-50%);
+  width:800px;
+  height:480px;
+  border-radius:8px;
+  overflow:hidden;
+  z-index:6;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  background:#000;                 /* evita flashes en cambios */
+  opacity:0;                       /* aparecer ya armado */
+  transition:opacity 200ms ease;
+}
+.slider-mask.ready{ opacity:1; }
+
+/* Pista: 2 slides uno al lado del otro */
+.slider-track{
+  position:absolute; inset:0;
+  display:flex;
+  align-items:stretch;
+  height:100%;
+  transform:translateX(0);         /* se ve el slide IZQUIERDO (actual) */
+}
+
+/* Cada imagen ocupa exactamente la tarjeta */
+.slide{
+  flex:0 0 100%;
+  width:100%;
+  height:100% !important;          /* anula height:auto de resets globales */
+  max-width:none;
+  display:block;
+  object-fit:cover;                 /* llena sin barras; usa 'contain' si prefieres verla completa */
+  object-position:center;
+  backface-visibility:hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slogan-bajo{
+  margin-left: 6%;
+  margin-top: 370px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #003366;
+  white-space: nowrap;
+}
+
+
+/* Contenedor (deja espacio para tu chatbot a la derecha) */
+.niveles{
+  width:100%;
+  max-width:1200px;
+  display:flex;
+  align-items: center;
+  gap:100px;
+  margin:32px 0;
+  position: relative;
+  padding-right: 340px;
+}
+
+
+/* Tarjeta con color + imagen de fondo tenue */
+.tarjeta{
+  position:relative;
+  width: 350px;
+  flex: 0 0 300px;
+  min-height:440px;
+  padding:20px;
+  border-radius:18px;
+  background: var(--bg, #E9F7EE);    /* verde claro editable */
+  overflow:visible;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: flex-start;
+}
+
+/* ===== Levitar tarjeta de nivel al pasar el cursor ===== */
+/* Base: preparamos transición suave */
+.tarjeta{
+  transition: transform .22s cubic-bezier(.2,.65,.3,1),
+              box-shadow .22s cubic-bezier(.2,.65,.3,1); /* ADD */
+  will-change: transform; /* ADD */
+}
+
+/* Solo en dispositivos con mouse/hover (no molesta en celular) */
+@media (hover:hover) and (pointer:fine){
+  .tarjeta:hover{
+    transform: translateY(-8px);               /* levita */
+    box-shadow: 0 18px 36px rgba(0,0,0,.18);   /* sombra más profunda */
+  }
+  /* (Opcional) un toquecito a la mini-card para dar profundidad */
+  .tarjeta:hover .mini-card{
+    transform: translateY(-2px);
+  }
+}
+
+/* Accesible con teclado: aplica el mismo efecto cuando se enfoca algo dentro */
+.tarjeta:focus-within{
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.18);
+}
+
+
+/* Imagen de fondo con poca transparencia */
+.tarjeta::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  opacity: var(--img-opacity, .25);  /* 0.15–0.35 según prefieras */
+  z-index:0;
+}
+
+/* Contenido encima */
+.tarjeta > *{
+  position:relative;
+  z-index:1;
+  margin:0;
+}
+.tarjeta h3{ color:#0A4FB4; margin-bottom:8px; }
+.tarjeta p{ color:#1e2e3e; line-height:1.4; }
+
+/* Responsive */
+@media (max-width:900px){
+  .niveles{ width:100%; flex-direction:column; }
+}
+
+.mini-card{
+  width: 200px;
+  height:150px;
+  background:#fff;  /* aquí NO hay transparencia */
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+.mini-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Texto centrado */
+.tarjeta h3{
+  font-size:20px;
+  color:#0004FF;
+  margin:0;
+  margin-bottom:5px;
+  text-align:left;
+  width:100%;
+}
+
+.tarjeta p{
+  margin:0;
+  color:#1e2e3e;
+  font-size:20px;
+  line-height:1.4;
+}
+
+.tarjeta h3{
+    text-align:center;
+    width:100%;
+}
+
+.tarjeta p{
+    text-align:left;
+    width:100%;
+}
+
+.sticker-bottom{
+    position: absolute;
+    bottom: -10px; /* Hace que salga de la tarjeta */
+    right: -65px;   /* Ajusta horizontal según tu gusto */
+    width: 210px;  /* Tamaño del personaje */
+    z-index: 5;    /* Encima de la tarjeta */
+    pointer-events: none; /* Para que no moleste al pasar el mouse */
+}
+
+.tarjeta .mini-card{
+    margin-left: auto;
+    margin-right: auto;
+}
+.primaria-sticker{
+  width: 400px;
+  right: -130px;
+  bottom: 0px;
+}
+.secundaria-sticker{
+  width: 200px;
+  right: -60px;
+  bottom: 0px;
+}
+
+.imagen-derecha {
+  width: 300px;           /* ajusta según tu imagen */
+  height: 480px;          /* similar a tus tarjetas */
+  object-fit: cover;      /* para que no se deforme */
+  border-radius: 20px;    /* esquinas suaves */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  object-fit: cover;
+  margin-left: 280px;
+  align-self: flex-start;
+  box-shadow: none;
+  flex: 0 0 auto;
+  align-self: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+/* Contenedor que agrupa al robot + texto */
+.chatbot-box{
+  position: absolute;
+  right: -40px;       /* ajusta según tu diseño */
+  top: 0;              /* posición general en la página */
+  text-align: center;
+  z-index: 10;
+}
+
+/* ==== Animación flotante para el robot ==== */
+.chatbot-imagen {
+  animation: flotarBot 4s ease-in-out infinite; /* duración y tipo de movimiento */
+}
+
+/* Movimiento vertical suave (flotando) */
+@keyframes flotarBot {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }  /* sube un poco */
+  100% { transform: translateY(0); }      /* vuelve a su lugar */
+}
+@keyframes flotarBot {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+/* Robot */
+.chatbot-imagen{
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin-left: 80px;
+}
+
+/* Texto debajo */
+.chatbot-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  color: #003366;
+  font-size: 18px;      /* puedes aumentar sin que se mueva todo */
+  font-weight: 600;
+  margin-left: 40px;
+}
+
+.icono-educacion{
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.boton-info{
+  display: inline-block;
+  background-color: #143ECC;     /* azul principal del sitio */
+  color: #fff;                   /* texto blanco */
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;         /* sin subrayado */
+  border-radius: 30px;           /* bordes redondeados */
+  padding: 10px 22px;            /* alto y ancho interno */
+  margin-top: 10px;              /* espacio arriba del texto */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* sombra ligera */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 80px;
+}
+
+.boton-info:hover{
+  background-color: #002B99;     /* tono más oscuro al pasar el mouse */
+  transform: scale(1.05);        /* pequeño efecto de agrandado */
+}
+
+.chatbot-inf{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+  color: #003366;
+  font-size: 18px;      /* puedes aumentar sin que se mueva todo */
+  font-weight: 600;
+}
+
+.boton-infoss{
+  display: inline-block;
+  position: relative;
+  background-color: #143ECC;     /* azul principal del sitio */
+  color: #fff;                   /* texto blanco */
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;         /* sin subrayado */
+  border-radius: 30px;           /* bordes redondeados */
+  padding: 10px 42px;            /* alto y ancho interno */
+  margin-top: 10px;              /* espacio arriba del texto */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* sombra ligera */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 30px;
+}
+.icono-educacionn{
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  transform: translateX(20px)
+}
+.boton-infoss:hover{
+  background-color: #002B99;     /* tono más oscuro al pasar el mouse */
+  transform: scale(1.05);        /* pequeño efecto de agrandado */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #143ECC;
+  color: white;
+  padding: 30px 20px 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contenedor principal: 4 columnas (logo, mapa de sitio, contacto, imagen del mapa) */
+.footer-content {
+  display: grid;
+  grid-template-columns: 150px 1fr 400px 80px; /* ajustar anchos según tu preferencia */
+  gap: 20px;
+  align-items: start;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ---------- columna 1: logo + redes ---------- */
+.footer-content > .footer-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+  gap: 5px;
+  padding-left: -10px;
+}
+
+.footer-content > .footer-section:nth-child(1) img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* redes justo debajo del logo (alineadas horizontalmente) */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 60%;
+  transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+
+.footer-social a:hover {
+  color: #143ECC;
+  background: #fbff00;
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- columna 2: mapa de sitio (3 listas) ---------- */
+.site-map {
+  padding-left: 20px; /* separación desde la izquierda del bloque */
+}
+
+.site-map h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* contenedor de listas en 3 columnas */
+.site-map .maps-columns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px 50px; /* separación vertical y horizontal entre columnas */
+  align-items: start;
+}
+
+/* estilo de cada lista */
+.site-map .maps-columns ul {
+  list-style: disc;
+  padding-left: 18px; /* espacio para el bullet */
+  margin: 0;
+}
+
+.site-map .maps-columns ul li {
+  margin-bottom: 20px;
+}
+
+.site-map .maps-columns ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .18s ease;
+}
+
+.site-map .maps-columns ul li a:hover {
+  color: #fbff00;
+}
+
+/* ---------- columna 3: CONTÁCTANOS ---------- */
+.footer-content > .footer-section:nth-child(3) {
+  padding-left: 60px;
+}
+
+.footer-content > .footer-section:nth-child(3) h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content > .footer-section:nth-child(3) p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* usa pequeños iconos inline si quieres (ya vienen con FontAwesome) */
+.footer-content > .footer-section:nth-child(3) i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ---------- columna 4: imagen del mapa ---------- */
+.footer-content > .footer-section:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* empuja la imagen al extremo derecho */
+  padding-right: 0;
+  margin-right: -45px;
+}
+
+.footer-content > .footer-section:nth-child(4) img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-top: 30px;
+}
+
+/* ---------- footer-bottom (texto final) ---------- */
+.footer-bottom {
+  margin-top: -10px;
+  background-color: #143ECC; /* sutil franja */
+  text-align: center;
+  padding: 20px -5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ---------- Responsive: adapta columnas en móviles ---------- */
+@media (max-width: 1000px) {
+  .footer-content {
+    grid-template-columns: 180px 1fr; /* logo + (mapa+contacto+mapa) apilados en la segunda columna */
+  }
+
+  /* fusionamos columnas 2-4 en una sola columna interna */
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 2 / 3;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) {
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-content > .footer-section:nth-child(1),
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .banner-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h1{
+    position: static;
+    top: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .frase{
+    position: static;
+    transform: none;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-mask{
+    position: static;
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  /* Centra y apila correctamente */
+  .banner-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Evita que el título se monte */
+  h1, .banner h1 {
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* El menú baja y se centra */
+  .menu {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* La frase se ubica debajo sin tapar */
+  .frase {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Elimina altura fija del banner */
+  .banner {
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto !important;
+    padding: 15px 0 !important;
+    overflow: visible !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .logo{
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  h1, .banner h1{
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .menu{
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .menu a{
+    font-size: 15px !important;
+  }
+
+  .frase{
+    position: static !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 12px !important;
+  }
+}
+
+
+
+/* Micro–ajustes header móvil */
+@media (max-width: 768px){
+  .banner{ padding-bottom: 8px !important; }
+  .banner-content{ gap: 10px !important; }
+
+  .menu{
+    row-gap: 6px !important;     /* separa filas */
+    column-gap: 16px !important;  /* separa columnas */
+  }
+  .menu a{
+    font-size: 14px !important;   /* caben mejor */
+    line-height: 1.2 !important;
+    padding: 6px 8px !important;
+  }
+
+  .frase{
+    margin: 10px 0 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+
+
+
+/* ===== Slider responsive SIN romper tu desktop ===== */
+@media (max-width: 991.98px){
+
+  /* El contenedor debe ser relative para que .slider-track (absolute) se ancle aquí */
+  .slider-mask{
+    display: block !important;
+    position: relative !important;     /* <- clave: NO static */
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+
+    width: 92vw !important;
+    max-width: 620px !important;
+    height: clamp(220px, 55vw, 340px) !important;
+    margin: 12px auto 0 !important;
+
+    overflow: hidden !important;       /* recorta las imágenes */
+    border-radius: 10px !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,.18) !important;
+    opacity: 1 !important;
+    background: #000 !important;       /* evita flashes en cambios */
+  }
+
+  /* La pista rellena el contenedor */
+  .slider-track{
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    transform: translateX(0) !important;   /* estado base */
+  }
+
+  /* Cada slide ocupa 100% del alto del contenedor */
+  .slide{
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    max-width: none !important;
+  }
+
+  /* Un poco de aire entre el título/menú y el slider */
+  .frase{ margin-bottom: 6px !important; }
+}
+
+
+/* Pulido del header + slider en móvil y tablet */
+@media (max-width: 991.98px){
+
+  /* 1) Un poco más de aire debajo del menú y la frase */
+  .menu{ row-gap: 6px !important; column-gap: 16px !important; }
+  .frase{ margin: 8px 0 10px !important; }
+
+  /* 2) Slider centrado, con margen y proporción estable */
+  .slider-mask{
+    position: relative !important;     /* la pista absolute se ancla aquí */
+    left: auto !important; bottom: auto !important; transform: none !important;
+
+    width: 94vw !important;            /* un pelín más angosto que la pantalla */
+    max-width: 520px !important;       /* evita que se haga enorme */
+    aspect-ratio: 16 / 9 !important;   /* altura automática estable */
+    height: auto !important;
+
+    margin: 10px auto 0 !important;    /* se separa del texto */
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,.18) !important;
+    background: #000 !important;       /* sin borde azul alrededor */
+    opacity: 1 !important;
+  }
+
+  /* 3) La pista rellena el contenedor */
+  .slider-track{
+    position: absolute !important; inset: 0 !important;
+    height: 100% !important; transform: translateX(0) !important;
+  }
+
+  /* 4) Cada slide ocupa todo el marco */
+  .slide{
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important; object-position: center !important;
+    display: block !important; max-width: none !important;
+  }
+}
+
+/* Móvil muy angosto (≤ 390px): texto y menú un puntito más pequeños */
+@media (max-width: 390px){
+  .banner h1{ font-size: 24px !important; }
+  .menu a{ font-size: 13.5px !important; }
+}
+
+
+/* pantallas muy angostas */
+@media (max-width: 360px){
+  .banner h1{ font-size: 22px !important; }
+  .menu a{ font-size: 13px !important; }
+}
+
+/* mejora de accesibilidad y tacto */
+.menu a{ padding: 8px 10px; }          /* zona táctil un poco mayor */
+.banner .img-layer{ opacity:.22; }     /* mejor contraste del texto */
+
+
+/* Ajuste fino: bajar el logo en móvil */
+@media (max-width: 991.98px){
+  .logo{
+    margin-top: 15px !important;   /* baja el logo un poco */
+    height: 180px !important;      /* mantiene proporción */
+    width: auto !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;  /* logo sobre el texto */
+    gap: 10px !important;               /* espacio entre logo y título */
+    padding-left: 0 !important;
+    justify-content: center;
+  }
+
+  .banner h1{
+    font-size: 30px !important;
+    top: 0 !important;
+  }
+}
+
+/* Móviles más pequeños */
+@media (max-width: 430px){
+  .logo{
+    margin-top: 25px !important;   /* un poco más abajo */
+    height: 150px !important;
+  }
+
+  .banner h1{
+    font-size: 26px !important;
+  }
+}
+
+
+/* 🔧 Ajuste fino: bajar solo el logo sin mover texto ni menú */
+@media (max-width: 991.98px){
+  .logo{
+    position: relative !important;
+    top: 25px !important;     /* baja solo el logo */
+    height: 180px !important;
+    width: auto !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding-left: 0 !important;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px){
+  .logo{
+    top: 35px !important;     /* un poco más abajo en pantallas pequeñas */
+    height: 150px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   SECTION: slogan + tarjetas + chatbot
+   ========================= */
+
+/* Tablet y menor */
+@media (max-width: 991.98px){
+  /* Slogan: centrado y con salto de línea */
+  .slogan-bajo{
+    margin: 18px auto 10px !important;
+    font-size: 18px !important;
+    white-space: normal !important;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  /* Las tarjetas se apilan/centran; quitamos el hueco del chatbot */
+  .niveles{
+    max-width: 900px;
+    margin: 18px auto !important;
+    padding-right: 0 !important;
+    gap: 28px !important;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Tarjetas fluidas */
+  .tarjeta{
+    flex: 1 1 320px !important;
+    max-width: 420px;
+    width: 100% !important;
+    min-height: auto;
+  }
+
+  /* Mini-card centrada y un poco más grande */
+  .mini-card{
+    width: 80% !important;
+    height: 150px !important;
+  }
+
+  /* Ajuste de texto */
+  .tarjeta h3{ font-size: 20px !important; }
+  .tarjeta p { font-size: 18px !important; }
+
+  /* Stickers más contenidos */
+  .sticker-bottom{ right: -24px; width: 160px; bottom: -6px; }
+  .primaria-sticker{ width: 240px; right: -70px; bottom: 0; }
+  .secundaria-sticker{ width: 160px; right: -40px; bottom: 0; }
+
+  /* Chatbot: quitar absoluto y centrar bajo las tarjetas */
+  .chatbot-box{
+    position: static !important;
+    margin: 6px auto 0 !important;
+    text-align: center;
+  }
+  .chatbot-imagen{ width: 110px !important; margin-left: 0 !important; }
+  .chatbot-info{ margin-left: 0 !important; }
+  .boton-info, .boton-infoss{ margin-left: 0 !important; }
+
+  /* Imagen de la derecha: ocúltala en tablet/móvil
+     (si prefieres, cámbialo por width: 92vw; height:auto) */
+  .imagen-derecha{ display: none !important; }
+}
+
+/* Móvil mediano */
+@media (max-width: 600px){
+  .slogan-bajo{
+    font-size: 16px !important;
+  }
+
+  .niveles{
+    gap: 22px !important;
+  }
+
+  .tarjeta{
+    max-width: 520px;
+    padding: 16px !important;
+  }
+
+  .mini-card{
+    width: 86% !important;
+    height: 130px !important;
+  }
+
+  .tarjeta h3{ font-size: 18px !important; }
+  .tarjeta p { font-size: 16px !important; }
+
+  .sticker-bottom{ right: -14px; width: 140px; }
+  .primaria-sticker{ width: 210px; right: -48px; }
+  .secundaria-sticker{ width: 140px; right: -28px; }
+
+  .chatbot-imagen{ width: 95px !important; }
+  .icono-educacion, .icono-educacionn{ width: 30px !important; height: 30px !important; }
+  .boton-info, .boton-infoss{ font-size: 14px !important; padding: 9px 18px !important; }
+}
+
+/* Móvil pequeño */
+@media (max-width: 400px){
+  .mini-card{ height: 120px !important; }
+  .sticker-bottom{ width: 120px; right: -10px; }
+  .primaria-sticker{ width: 190px; right: -40px; }
+}
+
+
+
+/* ====== MÓVIL (≤ 600px) — tarjetas + chatbot ====== */
+@media (max-width: 600px){
+
+  /* Contenedor */
+  .niveles{
+    gap: 18px !important;
+    padding-right: 0 !important;
+    justify-content: center;
+  }
+
+  /* Tarjeta: más angosta y con recorte para que no se salgan los stickers */
+  .tarjeta{
+    flex: 1 1 260px !important;   /* ancho base */
+    max-width: 320px !important;   /* tope en móvil */
+    width: 92vw !important;        /* ocupa gran parte del ancho */
+    padding: 14px 14px 18px !important;
+    overflow: hidden !important;   /* clave: recorta stickers */
+    min-height: auto !important;
+  }
+
+  /* Mini-card (foto superior) más compacta */
+  .mini-card{
+    width: 88% !important;
+    height: 120px !important;
+  }
+
+  .tarjeta h3{ font-size: 18px !important; margin: 6px 0 4px !important; }
+  .tarjeta p { font-size: 15px !important; line-height: 1.45 !important; }
+
+  /* Stickers: reducidos y más adentro */
+  .sticker-bottom{
+    right: -6px !important;
+    bottom: -6px !important;
+    width: 120px !important;
+  }
+  .primaria-sticker{ width: 170px !important; right: -22px !important; bottom: -4px !important; }
+  .secundaria-sticker{ width: 120px !important; right: -10px !important; bottom: -4px !important; }
+
+  /* Chatbot centrado */
+  .chatbot-box{
+    position: static !important;
+    margin: 8px auto 0 !important;
+    text-align: center;
+  }
+  .chatbot-imagen{ width: 95px !important; margin-left: 0 !important; }
+  .chatbot-info{ margin-left: 0 !important; gap: 6px !important; }
+  .icono-educacion, .icono-educacionn{ width: 28px !important; height: 28px !important; }
+  .boton-info, .boton-infoss{ font-size: 14px !important; padding: 9px 18px !important; margin-left: 0 !important; }
+
+  /* Imagen de la asistente (la de la derecha): vuelve a mostrarse y se adapta */
+  .imagen-derecha{
+    display: block !important;
+    width: 92vw !important;
+    height: auto !important;
+    margin: 10px auto 0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,.1) !important;
+  }
+}
+
+/* Un poco más compacto en móviles muy pequeños */
+@media (max-width: 400px){
+  .tarjeta{ max-width: 300px !important; }
+  .mini-card{ height: 110px !important; }
+  .sticker-bottom{ width: 110px !important; }
+  .primaria-sticker{ width: 160px !important; }
+}
+
+
+
+
+/* ===== Chatbot + imagen de asistente SOLO en móvil ===== */
+@media (max-width: 600px){
+
+  /* El contenedor del chatbot deja de estar absoluto y se centra */
+  .chatbot-box{
+    position: static !important;
+    margin: 12px auto 0 !important;
+    text-align: center;
+  }
+
+  .chatbot-imagen{
+    width: 90px !important;
+    margin: 0 auto !important;
+  }
+
+  .chatbot-info{
+    margin: 10px 0 0 !important;
+    gap: 6px !important;
+    font-size: 16px !important;
+  }
+
+  .icono-educacion,
+  .icono-educacionn{
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .boton-info,
+  .boton-infoss{
+    font-size: 14px !important;
+    padding: 9px 18px !important;
+    margin: 10px auto 0 !important;
+    display: inline-block !important;
+  }
+
+  /* Imagen de la asistente: más chica y SIN tarjeta */
+  .imagen-derecha{
+    display: block !important;
+    width: 86vw !important;     /* más pequeña */
+    max-width: 380px !important;
+    height: auto !important;
+    margin: 14px auto 0 !important;
+
+    /* quitar “tarjeta” */
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
+/* un toque más compacto en pantallas muy chicas */
+@media (max-width: 400px){
+  .chatbot-imagen{ width: 80px !important; }
+  .imagen-derecha{ width: 90vw !important; max-width: 320px !important; }
+}
+
+
+
+
+
+/* ===== Ajuste fino: chatbot y asistente en móviles ===== */
+@media (max-width: 600px){
+
+  /* Chincheta y texto "Inscríbete aquí" más hacia la izquierda */
+  .chatbot-inf{
+    flex-direction: row;
+    justify-content: flex-start !important; /* pega a la izquierda */
+    margin-left: 25px !important;            /* separa un poco del borde */
+  }
+
+  .icono-educacionn{
+    transform: translateX(0) !important;     /* quita desplazamiento */
+    margin-right: 6px !important;
+  }
+
+  .boton-infoss{
+    margin-left: 0 !important;               /* sin desplazamiento */
+  }
+
+  /* Imagen asistente más pequeña */
+  .imagen-derecha{
+    width: 70vw !important;      /* más chica en móviles */
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 12px auto !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+}
+
+/* En pantallas muy pequeñas */
+@media (max-width: 400px){
+  .imagen-derecha{
+    width: 65vw !important;
+    max-width: 260px !important;
+  }
+}
+
+
+
+
+@media (max-width: 600px){
+  .chatbot-inf{
+    justify-content: flex-start !important;
+    align-items: center;
+    gap: 6px;
+    margin-left: 10px !important;  /* la pegamos más al borde */
+    margin-top: 30px !important;
+  }
+
+  .icono-educacionn{
+    transform: none !important;
+    margin: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .boton-infoss{
+    font-size: 14px !important;
+    padding: 9px 18px !important;
+    margin: 0 !important;
+  }
+
+  /* imagen asistente más chica */
+  .imagen-derecha{
+    width: 50vw !important;
+    max-width: 190px !important;
+    margin: 14px auto 0 !important;
+  }
+}

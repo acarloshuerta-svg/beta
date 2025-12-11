@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - I.E.P Maria de los Angeles</title>
+  <link rel="stylesheet" href="contactos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  
+  <header>
+
+    <div class="banner">
+    <div class="banner-content">
+    <img src="img_index/escudo_iep.png" class="logo" alt="Escudo IEP"> 
+    <h1 style="text-align: center;font-size: 70px;">I.E.P “María de los Angeles”</h1>
+    </div>
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="programas.html">Programas Académicos</a>
+        <a href="noticias.html">Noticias/Eventos</a>
+        <a href="matricula.html">Matrícula</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="equipo.html">Equipo</a>
+    </nav>
+    </div>
+    </header>
+
+  <main>
+
+    <section class="contacto-fondo">
+
+      <h2>Contacto</h2>
+
+      <div class="contenedor-form">
+        <form>
+          <fieldset>
+            <legend>Dejanos tus Datos</legend>
+            <p>Conoce más sobre nuestra institución <br>
+            Completa el formulario y recibiras información sobre el proceso de matrícula</p>
+            <br>
+
+            <div class="fila">
+
+              <div class="input-box input-peq">
+                <select id="document" name="document" required>
+                  <option>DNI</option>
+                  <option>CARNET EXTRANJERIA</option>
+                  <option>RUC</option>
+                </select>
+              </div>
+
+              <div class="input-box input-grande">
+                <input id="documento" type="text" name="Documento" placeholder=" " required>
+                <label for="documento">N° DE DOCUMENTO</label>
+              </div>
+            </div>
+
+            <div class="input-box input-reducido">
+              <input id="nombres" type="text" name="Nombres" placeholder=" " required>
+              <label for="nombres">NOMBRES(*)</label>
+            </div>
+
+            <div class="input-box input-reducido">
+              <input id="apellidos" type="text" name="Apellidos" placeholder=" " required>
+              <label for="apellidos">APELLIDOS(*)</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <div class="fila">
+              <div class="input-box input-peq">
+                <select id="codigo" name="codigos" required>
+                  <option>(+51) PERU</option>
+                  <option>(+54) ARGENTINA</option>
+                  <option>(+591) BOLIVIA</option>
+                  <option>(+56) CHILE</option>
+                  <option>(+57) COLOMBIA</option>
+                  <option>(+593) ECUADOR</option>
+                  <option>(+595) PARAGUAY</option>
+                  <option>(+598) URUGUAY</option>
+                  <option>(+58) VENEZUELA</option>
+                  <option>(+1) ESTADOS UNIDOS</option>
+                </select>
+              </div>
+
+              <div class="input-box input-grande">
+                <input id="celular" type="text" name="Celular" placeholder=" " required>
+                <label for="celular">CELULAR(*)</label>
+              </div>
+            </div>
+
+
+            <div class="input-box input-reducido">
+              <input id="correo" type="email" name="Correo" placeholder=" " required>
+              <label for="correo">CORREO(*)</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+
+            <div class="fila">
+
+              <div class="input-box input-peq">
+                <select id="nivel" name="nivel" placeholder=" " required>
+                  <option value="inicial">INICIAL</option>
+                  <option value="primaria">PRIMARIA</option>
+                  <option value="secundaria">SECUNDARIA</option>
+                </select>
+                <label for="nivel">NIVEL</label>
+              </div>
+
+              <div class="input-box input-grande">
+                <select id="grado" name="grado" placeholder=" " required>
+                  <option>3 AÑOS</option>
+                  <option>4 AÑOS</option>
+                  <option>5 AÑOS</option>
+                </select>
+                <label for="grado">GRADO</label>
+              </div>
+
+            </div>
+
+
+
+            <label for="relacion">RELACIÓN CON EL ESTUDIANTE(*)</label>
+            <select id="relacion" name="relacion" required> 
+              <option>PADRE</option>
+              <option>MADRE</option>
+              <option>HERMANO(A)</option>
+              <option>ABUELO(A)</option>
+            </select>
+          </fieldset>
+
+          <label class="privacidad-label">
+            <input id="privacidad" type="checkbox" required>
+            He leído y acepto las <strong>políticas de privacidad(*)</strong>
+          </label>
+
+          <button type="reset">LIMPIAR</button>
+          <button type="submit">REGISTRAR</button>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <section class="contact-info">
+    <h2>Contáctanos</h2>
+
+    <div class="info-container">
+
+      <div class="info box">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Teléfono:</h3>
+        <p>922 134 977</p>
+      </div>
+
+      <div class="info box">
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <h3>WhatsApp:</h3>
+        <a href="#"><p>(51) 922 134 977</p></a>
+      </div>
+
+      <div class="info box">
+        <i class="fa-solid fa-share-nodes"></i>
+        <h3>Redes Sociales:</h3>
+
+        <p>
+          <a href="https://www.facebook.com/iep.mariadelosangeles1"><i class="fa-brands fa-facebook"></i> Facebook</a> <br>
+          <a href="https://www.tiktok.com/@mara.de.los.angel285"><i class="fa-brands fa-tiktok"></i> TikTok</a> <br>
+          <a href=""><i class="fa-brands fa-square-instagram"></i> Instagram</a> <br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-section">
+        <img src="img_index/escudo_iep.png" alt="Logo del colegio" width="120">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/iep.mariadelosangeles1"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.youtube.com/@MariaAngeles-n1g"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@mara.de.los.angel285"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section site-map">
+        <h3>Mapa de Sitio</h3>
+        <div class="maps-columns">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="programas.html">Programas Academicos</a></li>
+          </ul>
+          <ul>
+            <li><a href="noticias.html">Noticias/Eventos</a></li>
+            <li><a href="matricula.html">Matricula</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <ul>
+            <li><a href="equipo.html">Equipo</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>CONTACTANOS</h3>
+        <p>📍 Av. Wiesse parad. 7 1/2 Huanta II, pasando <br>
+         el monumento JCM., Lima, Perú</p>
+        <p>🕒 Lunes a Viernes | 9:00 a.m. - 3:00 p.m</p>
+      </div>
+
+      <div class="footer-section">
+        <a href="https://www.google.com/maps/place/Colegio+privado+%22Mar%C3%ADa+de+los+%C3%81ngeles%22/@-11.9418507,-77.1337838,12z/data=!4m10!1m2!2m1!1siep+maria+de+los+angeles!3m6!1s0x9105c587069941c5:0x461f4c0d5ab1222c!8m2!3d-11.9418507!4d-76.9813485!15sChhpZXAgbWFyaWEgZGUgbG9zIGFuZ2VsZXOSAQ5wcml2YXRlX3NjaG9vbOABAA!16s%2Fg%2F1hhh2stsw?entry=ttu&g_ep=EgoyMDI1MTEzMC4wIKXMDSoASAFQAw%3D%3D"><img src="img_index/ubicacion.png" alt=""></a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; - I.E.P. Maria de los Angeles. Todos los derechos reservados</p>
+      <p>Desarrollado por el equipo 4</p>
+    </div>
+  </footer>
+
+  <script src="Formulario.js"></script>
+
+</body>
+</html>

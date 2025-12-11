@@ -1,0 +1,1077 @@
+
+
+html body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  height: 230px;
+  background: #143ECC;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;        /* opcional */
+}
+
+.banner h1 {
+    position: relative;         /* queda encima de la imagen */
+    margin: 0;
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    line-height: 1.1px;         /* centra verticalmente rápido */
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+    margin-top: 40px;
+}
+h1{
+    position: relative;
+    top: -80px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 230px;           /* separación entre logo y texto */
+  padding-left: 40px;
+}
+.logo {
+  height: 250px;      /* ajusta tamaño del escudo */
+  width: 200;
+  position: relative;
+  top: -20px;
+}
+
+.menu{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;              /* estaba muy alto */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;           /* permite 2 filas si no alcanza */
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.matricula-banner {
+  position: relative;
+  background-image: url(matricula1.png); /* tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  padding: 80px 0;
+  font-size: 2em;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.matricula-banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #1E3A8A;
+    opacity: 0.85;
+}
+
+.matricula-banner h2{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+.matricula-info {
+  max-width: 900px;
+  margin: 180px auto;
+  text-align: justify;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin-left: 130px;
+  
+}
+
+.matricula-info h2 {
+  color: #143ECC; /* azul institucional */
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 50px;
+}
+
+.matricula-info h3{
+    font-size: 25px;
+}
+
+
+.matricula-info p {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+
+
+
+
+
+.matricula-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 60px auto;
+  gap: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.matricula-contenido .texto {
+  flex: 1;
+  text-align: justify;
+  color: #333;
+}
+
+.matricula-contenido .texto h2 {
+  color: #143ECC;
+  margin-bottom: 10px;
+}
+
+.matricula-contenido .imagen img {
+  width: 320px;
+  border: 3px solid #143ECC;
+  border-radius: 6px;
+}
+
+
+
+.matricula-imagen {
+  display: flex;
+  justify-content: flex-end; /* la mueve a la derecha */
+  margin-right: 40px;       /* distancia desde el borde derecho */
+  margin-top: -550px;        /* sube la imagen para alinearla con el texto */
+}
+
+.matricula-imagen img {
+  width: 600px;
+  height: 380px;
+  border: 3px solid #143ECC;
+  border-radius: 6px;
+}
+
+
+
+
+.tarjeta-seccion {
+  display: inline-block;
+  vertical-align: top;
+  background: #FAFAFA;
+  border: 1px solid #e0e0e0;
+  padding: 45px 50px;
+  margin: 40px 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 17px;      /* 🔹 Ocupará casi la mitad de la pantalla */
+  box-sizing: border-box;
+  margin-top: 150px;
+}
+
+/* Ajustes específicos */
+.tarjeta-niveles { 
+  width: 35%;
+  min-height: 200px;
+}
+.tarjeta-fechas  { 
+  width: 60%;
+  min-height: 451px; 
+}
+
+/* Título */
+.tarjeta-seccion h3 {
+  color: #143ECC;
+  font-size: 1.5em;
+  margin-bottom: 18px;
+}
+
+/* Íconos */
+
+
+/* 🔹 Títulos dentro de las tarjetas */
+.tarjeta-seccion h3 {
+  color: #000000;
+  font-size: 40px;          /* antes 1.4em → más grande */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;          /* mantiene alineado al texto */
+}
+
+/* 🔹 Texto dentro de las listas */
+.tarjeta-seccion li {
+  display: flex;
+  align-items: center;
+  font-size: 25px;          /* antes 15px → un poco más grande */
+  line-height: 1.8;          /* da más aire entre líneas */
+  margin-bottom: 12px;
+}
+
+/* 🔹 Íconos un poco más grandes también */
+.icono {
+  width: 85px;               /* antes 25px */
+  height: 85px;
+  margin-right: 12px;
+}
+
+
+
+.tarjeta-niveles ul{
+  margin-left: -40px;
+  margin-top: 40px;
+}
+
+.tarjeta-fechas ul{
+  margin-left: -40px;
+  margin-top: 70px;
+}
+
+.tarjeta-niveles h3{
+  margin-top: -20px;
+  margin-left: 60px;
+}
+
+.tarjeta-fechas h3{
+  margin-top: -20px;
+  margin-left: 60px;
+}
+
+
+
+
+
+
+
+
+
+.matricula {
+  padding: 40px 20px;
+  border: 1px solid #FDFFFF;
+}
+
+.titulo-matricula {
+  text-align: left;
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-left: 0;
+}
+
+.contenedor-matricula {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 35px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.tarjeta {
+  background-color: #FAFAFA;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 32px;
+  width: auto;
+  box-sizing: border-box;
+  min-height: 340px;
+  flex: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.encabezado-tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.icono-tarjeta {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.tarjeta h3 {
+  font-size: 35px;
+  margin: 0;
+  color: #143ECC;
+}
+
+.tarjeta ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 30px;
+  color: #444;
+  line-height: 2;
+}
+
+.tarjeta li + li {
+  margin-top: 8px;
+}
+
+.tarjeta strong {
+  color: #000;
+}
+
+.tarjeta li + li {
+  margin-top: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+.matricula-ubicacion {
+  width: 100%;
+  margin: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.titulo-ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: flex-start;
+  padding-left: 0;
+  margin-left: 20px;
+}
+
+.titulo-ubicacion img {
+  width: 35px;
+  height: 35px;
+}
+
+.titulo-ubicacion h2 {
+  font-size: 40PX;
+  margin: 0;
+  text-align: left;
+}
+
+.contenedor-ubicacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.tarjeta-ubicacion {
+  flex: 0 0 auto;              /* no crecer/encoger automáticamente */
+  width: auto;                 /* dejamos que lo fijen las reglas de abajo */
+  border: 6px solid #bebebe;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 6px rgba(160,160,160,0.4);
+}
+
+.tarjeta-ubicacion h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
+.tarjeta-ubicacion img {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.tarjeta-ubicacion ul {
+  list-style: disc;
+  padding: 0;
+  margin-top: 55px;
+  padding-left: 20px;
+}
+
+.tarjeta-ubicacion li {
+  margin-bottom: 45px;
+  font-size: 30px;
+}
+
+.tarjeta-ubicacion:first-child{
+  width: 38%;
+  margin-left: 10px;
+}
+
+.tarjeta-ubicacion:last-child{
+  width: 55%;
+  margin-left: 70px;
+}
+
+
+/* Contenedor responsivo con aspect-ratio (moderno) */
+.mapa-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;     /* alto automático; cambia a 4/3 si prefieres */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(160,160,160,0.4);
+}
+
+/* El iframe ocupa todo el contenedor */
+.mapa-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.boton-mapa {
+  display: inline-block;
+  margin-top: 10px;
+  background: #143ECC;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.boton-mapa:hover {
+  background: #0e8c9d;
+}
+
+
+
+/* Si algún estilo previo afectaba solo a IMG, no tocará el iframe.
+   Pero por si acaso, evita que esa regla lo rompa: */
+.tarjeta-ubicacion iframe { max-width: 100%; }
+
+
+@media (max-width: 768px) {
+  .contenedor-ubicacion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-ubicacion {
+    width: 90%;
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vacantes {
+  background-color: #1E3A8A;  /* azul fuerte como en la foto */
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 30px;
+}
+
+.vacantes h2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vacantes p {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.contacto {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  text-decoration: none; /* quita el subrayado del enlace */
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.contacto:hover {
+  background-color: #25D366; /* verde WhatsApp */
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
+
+.contacto img {
+  width: 38px;
+  height: 38px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Imagen también crece un poco */
+.contacto:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #143ECC;
+  color: white;
+  padding: 30px 20px 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+.footer-section{
+  margin-left: 0px;
+}
+
+.footer-section img{
+  width: 200px;
+  height: auto;
+}
+
+/* Contenedor principal: 4 columnas (logo, mapa de sitio, contacto, imagen del mapa) */
+.footer-content {
+  display: grid;
+  grid-template-columns: 150px 1fr 400px 80px; /* ajustar anchos según tu preferencia */
+  gap: 20px;
+  align-items: start;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ---------- columna 1: logo + redes ---------- */
+.footer-content > .footer-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+  gap: 5px;
+  padding-left: -10px;
+}
+
+.footer-content > .footer-section:nth-child(1) img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* redes justo debajo del logo (alineadas horizontalmente) */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 60%;
+  transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+
+.footer-social a:hover {
+  color: #143ECC;
+  background: #fbff00;
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- columna 2: mapa de sitio (3 listas) ---------- */
+.site-map {
+  padding-left: 20px; /* separación desde la izquierda del bloque */
+}
+
+.site-map h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* contenedor de listas en 3 columnas */
+.site-map .maps-columns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px 50px; /* separación vertical y horizontal entre columnas */
+  align-items: start;
+}
+
+/* estilo de cada lista */
+.site-map .maps-columns ul {
+  list-style: disc;
+  padding-left: 18px; /* espacio para el bullet */
+  margin: 0;
+}
+
+.site-map .maps-columns ul li {
+  margin-bottom: 20px;
+}
+
+.site-map .maps-columns ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .18s ease;
+}
+
+.site-map .maps-columns ul li a:hover {
+  color: #fbff00;
+}
+
+/* ---------- columna 3: CONTÁCTANOS ---------- */
+.footer-content > .footer-section:nth-child(3) {
+  padding-left: 60px;
+}
+
+.footer-content > .footer-section:nth-child(3) h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content > .footer-section:nth-child(3) p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* usa pequeños iconos inline si quieres (ya vienen con FontAwesome) */
+.footer-content > .footer-section:nth-child(3) i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ---------- columna 4: imagen del mapa ---------- */
+.footer-content > .footer-section:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* empuja la imagen al extremo derecho */
+  padding-right: 0;
+  margin-right: -45px;
+}
+
+.footer-content > .footer-section:nth-child(4) img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-top: 30px;
+}
+
+/* ---------- footer-bottom (texto final) ---------- */
+.footer-bottom {
+  margin-top: -10px;
+  background-color: #143ECC; /* sutil franja */
+  text-align: center;
+  padding: 20px -5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+
+
+/* ======================================================= */
+/* MEDIA QUERY PRINCIPAL: TABLETS Y MÓVILES (Max 900px)    */
+/* Aplica el cambio de diseño de horizontal a vertical     */
+/* ======================================================= */
+@media (max-width: 900px) {
+
+    /* --- 1. SECCIÓN DE INTRODUCCIÓN Y IMAGEN (.matricula-contenido) --- */
+    .matricula-contenido {
+        flex-direction: column; /* Apila el texto y la imagen */
+        max-width: 95%; /* Ajusta el ancho para móvil */
+        margin: 30px auto; /* Centra el contenedor y reduce el margen superior */
+        gap: 20px;
+    }
+
+    .matricula-info {
+        margin: 0 auto; /* Elimina márgenes fijos como 130px */
+        padding: 0 10px;
+        text-align: center; /* Centra el texto */
+    }
+
+    .matricula-info h2,
+    .matricula-info h3 {
+        text-align: center; /* Centra los títulos */
+    }
+
+    .matricula-imagen {
+        display: flex;
+        justify-content: center; /* Centra la imagen */
+        /* Eliminamos el margin-top negativo que sube la imagen */
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    .matricula-imagen img {
+        width: 90%; /* La imagen ocupa casi todo el ancho */
+        height: auto;
+    }
+
+    /* --- 2. TARJETAS DE NIVELES Y FECHAS (.tarjeta-seccion) --- */
+    .tarjeta-seccion {
+        display: block; /* Fuerza a que cada tarjeta ocupe su propia línea */
+        width: 95%;
+        margin: 20px auto; /* Centra las tarjetas y las separa */
+        padding: 30px 15px; 
+    }
+
+    .tarjeta-niveles,
+    .tarjeta-fechas {
+        width: 100%; /* Ocupan todo el ancho disponible */
+        min-height: auto; /* Remueve el alto fijo */
+    }
+    
+    .tarjeta-niveles h3,
+    .tarjeta-fechas h3 {
+        margin-left: 0; /* Remueve el margen lateral */
+        text-align: center;
+    }
+
+    /* --- 3. REQUISITOS Y PAGOS (Las 3 tarjetas) --- */
+    .contenedor-matricula {
+        flex-direction: column; /* Apila las 3 tarjetas de requisitos */
+        gap: 25px; 
+        padding: 0 15px;
+    }
+
+    .tarjeta {
+        flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho */
+        min-height: auto; 
+    }
+
+    /* --- 4. UBICACIÓN Y CONTACTO --- */
+    .contenedor-ubicacion {
+        flex-direction: column; /* Apila el mapa y la información de contacto */
+        gap: 25px;
+        padding: 0 15px;
+    }
+
+    .tarjeta-ubicacion:first-child, 
+    .tarjeta-ubicacion:last-child {
+        width: 100%; /* Ocupan todo el ancho */
+        margin-left: 0; 
+    }
+
+    .tarjeta-ubicacion img {
+        width: 100%; /* El mapa ocupa todo el ancho de la tarjeta */
+    }
+    
+    .tarjeta-ubicacion li {
+        font-size: 20px; /* Reduce un poco el tamaño de fuente */
+        margin-bottom: 20px;
+    }
+
+    /* --- 5. SECCIÓN DE VACANTES Y CONTACTO --- */
+    .vacantes h2 {
+        font-size: 35px; /* Reduce el tamaño del título de vacantes */
+    }
+
+    .vacantes p {
+        font-size: 25px; /* Reduce el tamaño del párrafo */
+    }
+
+    .contacto {
+        font-size: 25px; /* Reduce el tamaño del botón de contacto */
+    }
+
+    /* --- 6. FOOTER (Pie de página) --- */
+    .footer-content {
+        grid-template-columns: 1fr; /* Una sola columna para apilar las 4 secciones */
+        width: 95%;
+    }
+    
+    .footer-content > .footer-section:nth-child(3) { /* Columna de Contacto */
+        padding-left: 0;
+    }
+    
+    .site-map .maps-columns {
+        grid-template-columns: 1fr; /* Apila las 3 listas del Site Map */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ======================================================= */
+/* MEDIA QUERY PARA MÓVILES EXTREMOS (Max 480px)           */
+/* Ajustes para pantallas de teléfonos más pequeños        */
+/* ======================================================= */
+@media (max-width: 480px) {
+    /* Ajustes mínimos de tamaño de fuente para legibilidad */
+    .tarjeta-seccion li {
+        font-size: 18px;
+    }
+    .tarjeta h3 {
+        font-size: 28px;
+    }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .banner-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h1{
+    position: static;
+    top: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .frase{
+    position: static;
+    transform: none;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-mask{
+    position: static;
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  /* Centra y apila correctamente */
+  .banner-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Evita que el título se monte */
+  h1, .banner h1 {
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* El menú baja y se centra */
+  .menu {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* La frase se ubica debajo sin tapar */
+  .frase {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Elimina altura fija del banner */
+  .banner {
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto !important;
+    padding: 15px 0 !important;
+    overflow: visible !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .logo{
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  h1, .banner h1{
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .menu{
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .menu a{
+    font-size: 15px !important;
+  }
+
+  .frase{
+    position: static !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 12px !important;
+  }
+}
+
+
+
+/* Micro–ajustes header móvil */
+@media (max-width: 768px){
+  .banner{ padding-bottom: 8px !important; }
+  .banner-content{ gap: 10px !important; }
+
+  .menu{
+    row-gap: 6px !important;     /* separa filas */
+    column-gap: 16px !important;  /* separa columnas */
+  }
+  .menu a{
+    font-size: 14px !important;   /* caben mejor */
+    line-height: 1.2 !important;
+    padding: 6px 8px !important;
+  }
+
+  .frase{
+    margin: 10px 0 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+/* Ajuste fino del logo para centrar visualmente */
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    left: -20px; /* mueve a la izquierda, prueba -8 o -12 según tu ojo */
+  }
+}
+

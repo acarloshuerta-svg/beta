@@ -1,0 +1,583 @@
+
+html body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+
+
+.banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  height: 230px;
+  background: #143ECC;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;        /* opcional */
+}
+
+.banner h1 {
+    position: relative;         /* queda encima de la imagen */
+    margin: 0;
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    line-height: 1.1px;         /* centra verticalmente rápido */
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+    margin-top: 40px;
+}
+h1{
+    position: relative;
+    top: -80px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 230px;           /* separación entre logo y texto */
+  padding-left: 40px;
+}
+.logo {
+  height: 250px;      /* ajusta tamaño del escudo */
+  width: 200;
+  position: relative;
+  top: -20px;
+}
+
+.menu{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;              /* estaba muy alto */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;           /* permite 2 filas si no alcanza */
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+
+.programas {
+  position: relative;
+  background: url("img_index/header_3.png") center/cover no-repeat;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* centra horizontal */
+  text-align: center;    /* centra texto */
+  padding: 40px 20px;
+  color: #fff;
+  isolation: isolate;    /* asegura capas por encima del ::before */
+}
+
+/* CAPA AZUL TRANSPARENTE */
+.programas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1E3A8ACC; /* o #1E3A8ACC */
+  z-index: 0;
+}
+
+/* IMPORTANTE: ANULAR ESTILOS GLOBALES DEL H2 */
+.programas h2 {
+  position: relative;
+  font-size: 55px;          
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center 
+}
+
+
+
+
+
+
+
+
+
+
+
+.titulo-desarrolladores {
+  text-align: center;
+  font-size: 35px;
+  color: #c92b2b; /* rojo suave o institucional */
+  font-weight: bold;
+  margin: 40px 0 30px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* espacio entre líneas y texto */
+}
+
+.titulo-desarrolladores .linea {
+  display: inline-block;
+  width: 100px;       /* largo de la línea */
+  height: 2px;        /* grosor */
+  background-color: #c92b2b; /* mismo color del texto */
+}
+
+
+
+
+
+.contenedor-desarrolladores {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap; /* para que se acomoden si la pantalla es pequeña */
+  gap: 120px;
+  padding: 30px 0;
+}
+
+.tarjeta {
+  background-color: #f8f8f8;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 270px;
+  min-height: 500px;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+  color: #143ECC;  /* azul institucional */
+  font-size: 32px;
+  margin: 10px 0 5px 0;
+}
+
+.tarjeta p {
+  font-size: 20px;
+  color: #333;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #143ECC;
+  color: white;
+  padding: 30px 20px 15px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 80px;
+}
+
+/* Contenedor principal: 4 columnas (logo, mapa de sitio, contacto, imagen del mapa) */
+.footer-content {
+  display: grid;
+  grid-template-columns: 150px 1fr 400px 80px; /* ajustar anchos según tu preferencia */
+  gap: 20px;
+  align-items: start;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ---------- columna 1: logo + redes ---------- */
+.footer-content > .footer-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+  gap: 5px;
+  padding-left: -10px;
+}
+
+.footer-content > .footer-section:nth-child(1) img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* redes justo debajo del logo (alineadas horizontalmente) */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 60%;
+  transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+
+.footer-social a:hover {
+  color: #143ECC;
+  background: #fbff00;
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- columna 2: mapa de sitio (3 listas) ---------- */
+.site-map {
+  padding-left: 20px; /* separación desde la izquierda del bloque */
+}
+
+.site-map h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* contenedor de listas en 3 columnas */
+.site-map .maps-columns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px 50px; /* separación vertical y horizontal entre columnas */
+  align-items: start;
+}
+
+/* estilo de cada lista */
+.site-map .maps-columns ul {
+  list-style: disc;
+  padding-left: 18px; /* espacio para el bullet */
+  margin: 0;
+}
+
+.site-map .maps-columns ul li {
+  margin-bottom: 20px;
+}
+
+.site-map .maps-columns ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .18s ease;
+}
+
+.site-map .maps-columns ul li a:hover {
+  color: #fbff00;
+}
+
+/* ---------- columna 3: CONTÁCTANOS ---------- */
+.footer-content > .footer-section:nth-child(3) {
+  padding-left: 60px;
+}
+
+.footer-content > .footer-section:nth-child(3) h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content > .footer-section:nth-child(3) p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* usa pequeños iconos inline si quieres (ya vienen con FontAwesome) */
+.footer-content > .footer-section:nth-child(3) i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ---------- columna 4: imagen del mapa ---------- */
+.footer-content > .footer-section:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* empuja la imagen al extremo derecho */
+  padding-right: 0;
+  margin-right: -45px;
+}
+
+.footer-content > .footer-section:nth-child(4) img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-top: 30px;
+}
+
+/* ---------- footer-bottom (texto final) ---------- */
+.footer-bottom {
+  margin-top: -10px;
+  background-color: #143ECC; /* sutil franja */
+  text-align: center;
+  padding: 20px -5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ---------- Responsive: adapta columnas en móviles ---------- */
+@media (max-width: 1000px) {
+  .footer-content {
+    grid-template-columns: 180px 1fr; /* logo + (mapa+contacto+mapa) apilados en la segunda columna */
+  }
+
+  /* fusionamos columnas 2-4 en una sola columna interna */
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 2 / 3;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) {
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-content > .footer-section:nth-child(1),
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .banner-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h1{
+    position: static;
+    top: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .frase{
+    position: static;
+    transform: none;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-mask{
+    position: static;
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  /* Centra y apila correctamente */
+  .banner-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Evita que el título se monte */
+  h1, .banner h1 {
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* El menú baja y se centra */
+  .menu {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* La frase se ubica debajo sin tapar */
+  .frase {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Elimina altura fija del banner */
+  .banner {
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto !important;
+    padding: 15px 0 !important;
+    overflow: visible !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .logo{
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  h1, .banner h1{
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .menu{
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .menu a{
+    font-size: 15px !important;
+  }
+
+  .frase{
+    position: static !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 12px !important;
+  }
+}
+
+
+
+/* Micro–ajustes header móvil */
+@media (max-width: 768px){
+  .banner{ padding-bottom: 8px !important; }
+  .banner-content{ gap: 10px !important; }
+
+  .menu{
+    row-gap: 6px !important;     /* separa filas */
+    column-gap: 16px !important;  /* separa columnas */
+  }
+  .menu a{
+    font-size: 14px !important;   /* caben mejor */
+    line-height: 1.2 !important;
+    padding: 6px 8px !important;
+  }
+
+  .frase{
+    margin: 10px 0 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+/* Ajuste fino del logo para centrar visualmente */
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    left: -20px; /* mueve a la izquierda, prueba -8 o -12 según tu ojo */
+  }
+}

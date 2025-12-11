@@ -1,0 +1,1833 @@
+
+
+html body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+
+.banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  height: 230px;
+  background: #143ECC;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;        /* opcional */
+}
+
+.banner h1 {
+    position: relative;         /* queda encima de la imagen */
+    margin: 0;
+    color: #fff;
+    font-size: 70px;
+    text-align: center;
+    line-height: 1.1px;         /* centra verticalmente rápido */
+    text-shadow: 0 2px 6px rgba(0,0,0,.25);
+    margin-top: 40px;
+}
+h1{
+    position: relative;
+    top: -80px;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 230px;           /* separación entre logo y texto */
+  padding-left: 40px;
+}
+.logo {
+  height: 250px;      /* ajusta tamaño del escudo */
+  width: 200;
+  position: relative;
+  top: -20px;
+}
+
+.menu{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;              /* estaba muy alto */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;           /* permite 2 filas si no alcanza */
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+  margin-bottom: 50px;
+  margin-left: 10px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.banner-photo{
+    position: absolute;
+    bottom: -330px; /* controla cuánto baja fuera del banner */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px; /* ajusta tamaño */
+    height: 480px;
+    border-radius: 8px;
+    z-index: 6;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* sombra para que destaque */
+    object-fit: cover;
+}
+
+.bannerdos{
+  width: 100%;
+  height: 280px;
+  background: #1E3A8A;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.banner2-content h2{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+.img-layer {
+    position: absolute;
+    inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+    background-image: url("PROGRAMAS.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.10;              /* TRANSPARENCIA: 0.10–0.40 suele verse bien */
+    pointer-events: none;       /* evita clics sobre la capa */
+}
+
+.frase{
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    font-family: montserrat;
+}
+
+
+
+
+
+
+/* CONTENEDOR DE LA BANDA */
+.programas {
+  position: relative;
+  background: url("PROGRAMAS.png") center/cover no-repeat;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* centra horizontal */
+  text-align: center;    /* centra texto */
+  padding: 40px 20px;
+  color: #fff;
+  isolation: isolate;    /* asegura capas por encima del ::before */
+}
+
+/* CAPA AZUL TRANSPARENTE */
+.programas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1E3A8ACC; /* o #1E3A8ACC */
+  z-index: 0;
+}
+
+/* IMPORTANTE: ANULAR ESTILOS GLOBALES DEL H2 */
+.programas h2 {
+  position: relative;
+  z-index: 1;
+  margin: -50px 0 12px !important;  /* quita margin-left heredado */
+  font-size: 48px;              /* ajusta al tamaño de la maqueta */
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center !important;
+}
+
+/* FRASE */
+.programas .frase,
+.programas p {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 980px;
+  font-size: 20px;
+  color: #e5e5e5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 90px;
+}
+
+.nivel-inicial {
+    width: 45%;
+    margin-left: 60px;
+}
+
+.titulo {
+  font-size: 2.40px;
+  margin-bottom: 15px;
+}
+
+.azul {
+  color: #143ECC; /* azul */
+  font-weight: 700;
+}
+
+.rojo {
+  color: #8B0000; /* guinda */
+  font-weight: 700;
+}
+
+/* Descripción */
+.descripcion {
+  font-size: 25px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+
+/* --- Enfoque --- */
+.enfoque {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+
+.titulo-azul {
+  color: #143ECC;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* --- Tarjetas --- */
+.tarjetas {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.tarjeta {
+  background-color: #FED259; /* amarillo */
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+  height: 400px;
+  margin: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icono {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.tarjeta h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.icono-tarjeta{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.img-tarjeta{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 46px;
+    border-radius: 10px;
+}
+.icono-tarjeta2{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.img-tarjeta2{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 10px;
+}.icono-tarjeta3{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.img-tarjeta3{
+    width: 300px;
+    height: 190px;
+    object-fit: cover;
+    margin-top: 13px;
+    border-radius: 10px;
+}
+
+.titulo-azul{
+    font-size: 40px;
+}
+
+.tarjeta::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(fondo.png);
+    opacity: 0.06;
+    pointer-events: none;
+}
+.tarjeta>*{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+.contenedor2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.nivel-primaria {
+    width: 45%;
+    margin-left: 60px;
+}
+
+.titulo2 {
+  font-size: 2.4em;
+  margin-bottom: 15px;
+}
+
+.azul2 {
+  color: #143ECC; /* azul */
+  font-weight: 700;
+}
+
+.rojo2 {
+  color: #8B0000; /* guinda */
+  font-weight: 700;
+}
+
+/* Descripción */
+.descripcion2 {
+  font-size: 25px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+.titulo{
+    font-size: 40px;
+}
+
+/* --- Enfoque --- */
+.enfoque2 {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+
+.titulo-azul2 {
+  color: #143ECC;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* --- Tarjetas --- */
+.tarjetas2 {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.tarjeta2 {
+  background-color: #32CF98; /* amarillo */
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+  height: 420px;
+  margin: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icono {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.tarjeta2 h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.icono-tarjetaa{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.img-tarjetaa{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 36px;
+    border-radius: 10px;
+}
+.icono-tarjetaa2{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.img-tarjetaa2{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 10px;
+}.icono-tarjetaa3{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.img-tarjetaa3{
+    width: 300px;
+    height: 190px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.titulo-azul2{
+    font-size: 40px;
+}
+
+.tarjeta2::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(fondo.png);
+    opacity: 0.06;
+    pointer-events: none;
+}
+.tarjeta2>*{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+.contenedor3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.nivel-secundaria {
+    width: 45%;
+    margin-left: 60px;
+}
+
+.titulo3 {
+  font-size: 2.4em;
+  margin-bottom: 15px;
+}
+
+.azul3 {
+  color: #143ECC; /* azul */
+  font-weight: 700;
+}
+
+.rojo3 {
+  color: #8B0000; /* guinda */
+  font-weight: 700;
+}
+
+/* Descripción */
+.descripcion3 {
+  font-size: 25px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+.titulo3{
+    font-size: 40px;
+}
+
+/* --- Enfoque --- */
+.enfoque3 {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+
+.titulo-azul3 {
+  color: #143ECC;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* --- Tarjetas --- */
+.tarjetas3 {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.tarjeta3 {
+  background-color: #2457FF; /* amarillo */
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+  height: 450px;
+  margin: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icono {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.tarjeta3 h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.icono-tarjetaaa{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.img-tarjetaaa{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 36px;
+    border-radius: 10px;
+}
+.icono-tarjetaaa2{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.img-tarjetaaa2{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 10px;
+}.icono-tarjetaaa3{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.img-tarjetaaa3{
+    width: 300px;
+    height: 190px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.titulo-azul3{
+    font-size: 40px;
+}
+
+.tarjeta3::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(fondo.png);
+    opacity: 0.06;
+    pointer-events: none;
+}
+.tarjeta3>*{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+/* ===== EFECTO HOVER ÚNICO PARA TODAS LAS TARJETAS ===== */
+.tarjeta, .tarjeta2, .tarjeta3 {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elevación y sombra */
+.tarjeta:hover,
+.tarjeta2:hover,
+.tarjeta3:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Brillo diagonal que cruza la tarjeta */
+.tarjeta::after,
+.tarjeta2::after,
+.tarjeta3::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -150%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 70%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.6s ease, top 0.6s ease;
+}
+
+/* Activa el brillo */
+.tarjeta:hover::after,
+.tarjeta2:hover::after,
+.tarjeta3:hover::after {
+  opacity: 1;
+  top: 100%;
+  transition: top 0.8s ease;
+}
+
+/* Zoom leve de la imagen al pasar el cursor */
+.img-tarjeta:hover,
+.img-tarjeta2:hover,
+.img-tarjeta3:hover,
+.img-tarjetaaa:hover,
+.img-tarjetaaa2:hover,
+.img-tarjetaaa3:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+/* Suaviza el movimiento */
+.img-tarjeta,
+.img-tarjeta2,
+.img-tarjeta3,
+.img-tarjetaaa,
+.img-tarjetaaa2,
+.img-tarjetaaa3 {
+  transition: transform 0.5s ease;
+}
+
+
+/* Transición y zoom para las imágenes de PRIMARIA */
+.img-tarjetaa,
+.img-tarjetaa2,
+.img-tarjetaa3 {
+  transition: transform 0.5s ease;
+}
+
+.img-tarjetaa:hover,
+.img-tarjetaa2:hover,
+.img-tarjetaa3:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cuadro-azul {
+  width: 100%;
+  height: 350px;
+  background-color: #1E3A8A;
+  display: flex;                /* centraremos horizontal y verticalmente */
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 100px;
+}
+
+/* Cuadro blanco donde va el ícono */
+.cuadro-blanco {
+  background: white;
+  width: 520px;
+  height: 280px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* Ícono de YouTube */
+.cuadro-blanco img {
+  width: 220px;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+/* --- Texto al lado derecho --- */
+.texto-video {
+  color: white;
+  margin-left: 450px;
+  max-width: 680px;
+  margin-top: -60px;
+  text-align: center;
+}
+
+.texto-video h2 {
+  color: #FFD43B; /* amarillo */
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.texto-video p {
+  color: #ffffff;
+  font-size: 23px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.boton-ver {
+  background-color: #143ECC;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.boton-ver:hover {
+  background-color: #0d2ea8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #143ECC;
+  color: white;
+  padding: 30px 20px 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+.footer-section{
+  margin-left: 0px;
+}
+
+.footer-section img{
+  width: 200px;
+  height: auto;
+}
+
+/* Contenedor principal: 4 columnas (logo, mapa de sitio, contacto, imagen del mapa) */
+.footer-content {
+  display: grid;
+  grid-template-columns: 150px 1fr 400px 80px; /* ajustar anchos según tu preferencia */
+  gap: 20px;
+  align-items: start;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ---------- columna 1: logo + redes ---------- */
+.footer-content > .footer-section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* logo a la izquierda */
+  gap: 5px;
+  padding-left: -10px;
+}
+
+.footer-content > .footer-section:nth-child(1) img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* redes justo debajo del logo (alineadas horizontalmente) */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  font-size: 25px;
+  text-decoration: none !important;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 60%;
+  transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+
+.footer-social a:hover {
+  color: #143ECC;
+  background: #fbff00;
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- columna 2: mapa de sitio (3 listas) ---------- */
+.site-map {
+  padding-left: 20px; /* separación desde la izquierda del bloque */
+}
+
+.site-map h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* contenedor de listas en 3 columnas */
+.site-map .maps-columns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px 50px; /* separación vertical y horizontal entre columnas */
+  align-items: start;
+}
+
+/* estilo de cada lista */
+.site-map .maps-columns ul {
+  list-style: disc;
+  padding-left: 18px; /* espacio para el bullet */
+  margin: 0;
+}
+
+.site-map .maps-columns ul li {
+  margin-bottom: 20px;
+}
+
+.site-map .maps-columns ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .18s ease;
+}
+
+.site-map .maps-columns ul li a:hover {
+  color: #fbff00;
+}
+
+/* ---------- columna 3: CONTÁCTANOS ---------- */
+.footer-content > .footer-section:nth-child(3) {
+  padding-left: 60px;
+}
+
+.footer-content > .footer-section:nth-child(3) h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content > .footer-section:nth-child(3) p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* usa pequeños iconos inline si quieres (ya vienen con FontAwesome) */
+.footer-content > .footer-section:nth-child(3) i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* ---------- columna 4: imagen del mapa ---------- */
+.footer-content > .footer-section:nth-child(4) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* empuja la imagen al extremo derecho */
+  padding-right: 0;
+  margin-right: -45px;
+}
+
+.footer-content > .footer-section:nth-child(4) img {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-top: 30px;
+}
+
+/* ---------- footer-bottom (texto final) ---------- */
+.footer-bottom {
+  margin-top: -10px;
+  background-color: #143ECC; /* sutil franja */
+  text-align: center;
+  padding: 20px -5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+
+/* ---------- Responsive: adapta columnas en móviles ---------- */
+@media (max-width: 1000px) {
+  .footer-content {
+    grid-template-columns: 180px 1fr; /* logo + (mapa+contacto+mapa) apilados en la segunda columna */
+  }
+
+  /* fusionamos columnas 2-4 en una sola columna interna */
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 2 / 3;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) {
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-content > .footer-section:nth-child(1),
+  .site-map,
+  .footer-content > .footer-section:nth-child(3),
+  .footer-content > .footer-section:nth-child(4) {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .site-map .maps-columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-content > .footer-section:nth-child(4) img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Contenedor blanco: ya no fuerces height fijo para que respete el 16:9 */
+.cuadro-blanco{
+  background: white;
+  width: 520px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;              /* suave */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Caja del video con relación 16:9 */
+.video-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;       /* SI tu navegador lo soporta */
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover;     /* miniatura */
+  background-position: center;
+  cursor: pointer;
+}
+
+/* Botón play (dibujado con CSS) */
+.video-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.2);         /* velo oscuro */
+  transition: background .2s;
+}
+.video-box::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  transform: translate(-50%,-50%);
+  width:72px; height:72px;
+  border-radius:50%;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  clip-path: polygon(35% 25%, 35% 75%, 75% 50%); /* ► */
+}
+.video-box:hover::before{ background: rgba(0,0,0,.35); }
+
+/* Si tu proyecto NO soporta aspect-ratio, usa este fallback:
+.video-box{height:0; padding-bottom:56.25%;}
+.video-box iframe{position:absolute; inset:0; width:100%; height:100%;}
+*/
+
+.video-box::before,
+.video-box::after{
+  pointer-events: none;
+}
+
+
+
+.video-box.is-playing::before,
+.video-box.is-playing::after{
+  display: none;
+}
+
+
+
+
+.video-box iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .banner-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h1{
+    position: static;
+    top: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .frase{
+    position: static;
+    transform: none;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-mask{
+    position: static;
+    width: 95%;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+
+
+
+@media (max-width: 768px){
+  /* Centra y apila correctamente */
+  .banner-content {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  /* Evita que el título se monte */
+  h1, .banner h1 {
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* El menú baja y se centra */
+  .menu {
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* La frase se ubica debajo sin tapar */
+  .frase {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Elimina altura fija del banner */
+  .banner {
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .banner{
+    height: auto !important;
+    padding: 15px 0 !important;
+    overflow: visible !important;
+  }
+
+  .banner-content{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .logo{
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  h1, .banner h1{
+    position: static !important;
+    top: auto !important;
+    font-size: 26px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .menu{
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .menu a{
+    font-size: 15px !important;
+  }
+
+  .frase{
+    position: static !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    margin-top: 12px !important;
+  }
+}
+
+
+
+/* Micro–ajustes header móvil */
+@media (max-width: 768px){
+  .banner{ padding-bottom: 8px !important; }
+  .banner-content{ gap: 10px !important; }
+
+  .menu{
+    row-gap: 6px !important;     /* separa filas */
+    column-gap: 16px !important;  /* separa columnas */
+  }
+  .menu a{
+    font-size: 14px !important;   /* caben mejor */
+    line-height: 1.2 !important;
+    padding: 6px 8px !important;
+  }
+
+  .frase{
+    margin: 10px 0 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+/* Ajuste fino del logo para centrar visualmente */
+@media (max-width: 768px) {
+  .logo {
+    position: relative;
+    left: -20px; /* mueve a la izquierda, prueba -8 o -12 según tu ojo */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   RESPONSIVE NIVELES EDUCATIVOS
+   (sin tocar escritorio)
+   =========================== */
+
+/* --- Ajustes generales para tablet: 2 columnas --- */
+@media (max-width: 992px) {
+  /* Apilar texto + tarjetas en cada bloque */
+  .contenedor,
+  .contenedor2,
+  .contenedor3 {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  /* Texto ocupa 100% y se centra */
+  .nivel-inicial,
+  .nivel-primaria,
+  .nivel-secundaria {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 24px;
+    text-align: left;  /* déjalo en left si así está en escritorio */
+  }
+
+  /* Títulos un poco más compactos */
+  .titulo,
+  .titulo2,
+  .titulo3,
+  .titulo-azul,
+  .titulo-azul2,
+  .titulo-azul3 {
+    margin-bottom: 14px;
+  }
+
+  .descripcion,
+  .descripcion2,
+  .descripcion3 {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  /* Contenedores de tarjetas: 2 columnas */
+  .tarjetas,
+  .tarjetas2,
+  .tarjetas3 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    padding: 0 16px 8px;
+    justify-items: center; /* centra cada tarjeta en su celda */
+  }
+
+  /* Tarjetas se adaptan al ancho disponible, con límite máx. */
+  .tarjeta,
+  .tarjeta2,
+  .tarjeta3 {
+    width: 100%;
+    max-width: 340px;      /* ancho tope por estética */
+    margin: 0;             /* elimina márgenes laterales fijos */
+    height: auto;          /* permite crecer según contenido */
+  }
+
+  /* Imagenes dentro de tarjetas: llenan el ancho de la tarjeta */
+  .img-tarjeta,
+  .img-tarjeta2,
+  .img-tarjeta3,
+  .img-tarjetaa,
+  .img-tarjetaa2,
+  .img-tarjetaa3,
+  .img-tarjetaaa,
+  .img-tarjetaaa2,
+  .img-tarjetaaa3 {
+    width: 100%;
+    height: 200px;         /* altura coherente en tablet */
+    object-fit: cover;
+    margin-top: 16px;      /* uniforma los distintos márgenes */
+  }
+
+  /* Íconos y títulos de cada tarjeta un poco más compactos */
+  .tarjeta h3,
+  .tarjeta2 h3,
+  .tarjeta3 h3 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .icono-tarjeta,
+  .icono-tarjeta2,
+  .icono-tarjeta3,
+  .icono-tarjetaa,
+  .icono-tarjetaa2,
+  .icono-tarjetaa3,
+  .icono-tarjetaaa,
+  .icono-tarjetaaa2,
+  .icono-tarjetaaa3 {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* --- Móvil: 1 columna --- */
+@media (max-width: 768px) {
+  /* texto centrado en móvil si lo prefieres así */
+  .nivel-inicial,
+  .nivel-primaria,
+  .nivel-secundaria {
+    text-align: left;      /* cambia a center si lo quieres centrado */
+    padding: 0 16px;
+  }
+
+  .descripcion,
+  .descripcion2,
+  .descripcion3 {
+    font-size: 18px;
+  }
+
+  .tarjetas,
+  .tarjetas2,
+  .tarjetas3 {
+    grid-template-columns: 1fr;    /* una por fila */
+    gap: 16px;
+    padding: 0 12px 8px;
+  }
+
+  .tarjeta,
+  .tarjeta2,
+  .tarjeta3 {
+    max-width: 420px;              /* un poco más ancha en móvil grande */
+  }
+
+  .img-tarjeta,
+  .img-tarjeta2,
+  .img-tarjeta3,
+  .img-tarjetaa,
+  .img-tarjetaa2,
+  .img-tarjetaa3,
+  .img-tarjetaaa,
+  .img-tarjetaaa2,
+  .img-tarjetaaa3 {
+    height: 180px;                 /* un pelín más baja en móviles */
+    margin-top: 12px;
+  }
+
+  .tarjeta h3,
+  .tarjeta2 h3,
+  .tarjeta3 h3 {
+    font-size: 20px;
+  }
+}
+
+/* --- Micro-ajustes para móviles muy chicos --- */
+@media (max-width: 360px) {
+  .descripcion,
+  .descripcion2,
+  .descripcion3 {
+    font-size: 17px;
+  }
+  .img-tarjeta,
+  .img-tarjeta2,
+  .img-tarjeta3,
+  .img-tarjetaa,
+  .img-tarjetaa2,
+  .img-tarjetaa3,
+  .img-tarjetaaa,
+  .img-tarjetaaa2,
+  .img-tarjetaaa3 {
+    height: 160px;
+  }
+}
+
+
+
+
+/* ===== Niveles Educativos: responsive sin tocar escritorio ===== */
+@media (max-width: 992px) {
+  /* Centrar títulos y descripciones de cada nivel */
+  .nivel-inicial, .nivel-primaria, .nivel-secundaria,
+  [class*="nivel"] {
+    text-align: center;
+  }
+  .nivel-inicial p, .nivel-primaria p, .nivel-secundaria p,
+  [class*="nivel"] p {
+    max-width: 640px;
+    margin: 0 auto 14px;
+  }
+
+  /* Título "Enfoque" centrado */
+  .enfoque h2, .enfoque .titulo, [class*="enfoque"] h2 {
+    text-align: center;
+    margin: 12px 0;
+  }
+
+  /* Contenedor de tarjetas: una por fila y centradas */
+  .enfoque, .enfoque-grid, .tarjetas, .cards, [class*="cards-"], [class*="tarjetas-"] {
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 tarjeta por fila en tablet/móvil */
+    justify-items: center;        /* centra las tarjetas */
+    gap: 14px;
+    padding-inline: 12px;         /* aire lateral para que no “choque” */
+  }
+
+  /* Tamaño máximo de cada tarjeta (reduce y centra) */
+  .tarjeta, .card, [class*="tarjeta"] {
+    width: 100%;
+    max-width: 420px;             /* <= reduce tamaño */
+    margin: 0 auto;
+  }
+
+  /* Imágenes dentro de la tarjeta uniformes */
+  .tarjeta img, .card img, [class*="tarjeta"] img {
+    width: 100%;
+    height: 160px;                /* ajusta si la quieres más baja */
+    object-fit: cover;
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Más compacto en móviles chicos */
+  .tarjeta, .card, [class*="tarjeta"] {
+    max-width: 360px;
+  }
+  .enfoque, .enfoque-grid, .tarjetas, .cards {
+    gap: 12px;
+    padding-inline: 10px;
+  }
+  .enfoque h2, [class*="enfoque"] h2 { margin: 10px 0 6px; }
+}
+
+
+
+
+/* Ajuste tamaño de íconos dentro de las tarjetas solo en responsive */
+@media (max-width: 992px) {
+  .tarjeta i,
+  .card i,
+  [class*="tarjeta"] i,
+  [class*="card"] i {
+    font-size: 18px !important;   /* antes probablemente 24px o más */
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .tarjeta i,
+  .card i,
+  [class*="tarjeta"] i,
+  [class*="card"] i {
+    font-size: 16px !important;   /* aún más pequeño en móviles */
+  }
+}
+
+
+/* Ajuste tamaño de los iconos (imágenes) dentro de las tarjetas solo en responsive */
+@media (max-width: 992px) {
+  .tarjeta img.icono,
+  .card img.icono,
+  [class*="tarjeta"] img.icono {
+    width: 24px !important;   /* tamaño más pequeño */
+    height: auto !important;
+    margin-right: 6px;        /* separa del texto */
+  }
+}
+
+@media (max-width: 520px) {
+  .tarjeta img.icono,
+  .card img.icono,
+  [class*="tarjeta"] img.icono {
+    width: 20px !important;   /* aún más pequeño en móviles */
+  }
+}
+
+
+
+/* 🔧 Fuerza el tamaño de los iconos blancos dentro de las tarjetas */
+@media (max-width: 992px) {
+  .tarjeta img,
+  .card img,
+  [class*="tarjeta"] img,
+  [class*="card"] img {
+    width: 28px !important;      /* íconos pequeños */
+    height: auto !important;
+  }
+
+  /* pero NO afectar las fotos grandes (las que tienen ancho completo) */
+  .tarjeta img[style*="width:100%"],
+  .tarjeta img.foto,
+  .tarjeta .imagen,
+  .card img[style*="width:100%"],
+  .card img.foto,
+  .card .imagen {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .tarjeta img,
+  .card img,
+  [class*="tarjeta"] img,
+  [class*="card"] img {
+    width: 22px !important;
+  }
+}
+
+
+/* 1) RESETEO: deja de encoger todas las imágenes de la tarjeta */
+@media (max-width: 992px) {
+  .tarjeta img,
+  [class*="tarjeta"] img {
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+/* 2) La FOTO principal de la tarjeta debe ocupar el ancho de la tarjeta */
+@media (max-width: 992px) {
+  /* Si tu foto grande tiene clase .foto, .imagen, .thumb, etc. quedará bien con este NOT */
+  .tarjeta img:not([class*="icono"]),
+  [class*="tarjeta"] img:not([class*="icono"]) {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+}
+
+/* 3) SOLO los íconos blancos (tus clases) se reducen */
+@media (max-width: 992px) {
+  .icono-tarjeta,
+  .icono-tarjetaa,
+  .icono-tarjetaaa {
+    width: 26px !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 520px) {
+  .icono-tarjeta,
+  .icono-tarjetaa,
+  .icono-tarjetaaa {
+    width: 20px !important;
+  }
+}
+
+/* 4) (Opcional pero muy robusto) 
+   Si por estructura el icono es el primero dentro de la tarjeta, fuerza esto: */
+@media (max-width: 992px) {
+  .tarjeta img:first-of-type,
+  [class*="tarjeta"] img:first-of-type {
+    width: 26px !important;
+    height: auto !important;
+  }
+  .tarjeta img:last-of-type,
+  [class*="tarjeta"] img:last-of-type {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+
+/* ===========================
+   VIDEO + TEXTO: RESPONSIVE
+   =========================== */
+
+/* 1) Suavizar en pantallas grandes medianas */
+@media (max-width: 1200px) {
+  .cuadro-azul {
+    padding-left: 40px;            /* antes 100px */
+    gap: 24px;
+  }
+  .texto-video {
+    margin-left: 120px;            /* reduce empuje lateral */
+    margin-top: 0;
+    max-width: 560px;
+    text-align: center;
+  }
+  .texto-video h2 { font-size: 44px; }
+  .texto-video p  { font-size: 21px; }
+  .cuadro-blanco  { width: 500px; height: auto; }
+}
+
+/* 2) Tablet */
+@media (max-width: 992px) {
+  .cuadro-azul {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 20px;
+  }
+
+  /* El recuadro blanco se vuelve fluido y mantiene 16:9 */
+  .cuadro-blanco {
+    width: 480px;
+    height: auto;                  /* deja que el alto lo maneje el contenido */
+    border-radius: 10px;
+  }
+
+  /* Si tienes imagen de “play” como placeholder */
+  .cuadro-blanco img {
+    width: 160px;
+    height: auto;
+  }
+
+  /* Si ya insertas el iframe dentro de .video-box, que ocupe todo */
+  .video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;          /* relación 16:9 moderna */
+    max-width: 480px;              /* evita que se salga */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* Texto más compacto y centrado */
+  .texto-video {
+    margin-left: 40px;             /* mucho menor que 450px */
+    max-width: 520px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .texto-video h2 { font-size: 38px; }
+  .texto-video p  { font-size: 20px; }
+}
+
+/* 3) Móvil: apilar (video arriba, texto abajo) */
+@media (max-width: 768px) {
+  .cuadro-azul {
+    flex-direction: column;        /* apilado */
+    align-items: center;
+    justify-content: center;
+    height: auto;                  /* deja crecer el alto */
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .cuadro-blanco {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+  }
+
+  .video-box {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .texto-video {
+    margin: 10px 0 0 0;            /* quita margen izquierdo fijo */
+    max-width: 520px;
+    text-align: center;
+  }
+
+  .texto-video h2 { font-size: 32px; }
+  .texto-video p  { font-size: 18px; }
+  .boton-ver {
+    margin-top: 16px;
+    display: inline-block;
+  }
+}
+
+/* 4) Móvil pequeño */
+@media (max-width: 520px) {
+  .video-box,
+  .cuadro-blanco,
+  .texto-video { max-width: 440px; }
+
+  .texto-video h2 { font-size: 28px; }
+  .texto-video p  { font-size: 16px; line-height: 1.5; }
+}
+
+/* 5) Muy pequeño */
+@media (max-width: 360px) {
+  .video-box,
+  .cuadro-blanco,
+  .texto-video { max-width: 100%; }
+  .texto-video h2 { font-size: 24px; }
+  .texto-video p  { font-size: 15px; }
+}
+
+
+
+
+
+
+
